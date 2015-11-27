@@ -2,10 +2,13 @@
 
 namespace App;
 
+use App\Traits\RelationTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+
+    use RelationTrait;
     /**
      * The database table used by the model.
      *

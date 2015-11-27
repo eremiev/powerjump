@@ -34,13 +34,20 @@ Route::group([
             'only' => ['index', 'show', 'store', 'update', 'destroy']
         ]);
 
-
         Route::resource('members', 'MembersController', [
             'only' => ['index', 'show', 'store', 'update', 'destroy']
         ]);
 
 
         Route::resource('administrators', 'AdministratorsController', [
+            'only' => ['index', 'show', 'store', 'update', 'destroy']
+        ]);
+
+        Route::resource('events', 'EventsController', [
+            'only' => ['index', 'show', 'store', 'update', 'destroy']
+        ]);
+
+        Route::resource('projects', 'ProjectsController', [
             'only' => ['index', 'show', 'store', 'update', 'destroy']
         ]);
 
