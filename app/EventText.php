@@ -20,6 +20,7 @@ class EventText extends Model
      */
     protected $fillable = [
         'event_id',
+        'lang',
         'title',
         'description'
     ];

@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Event;
+use App\Queries\Event\Store;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EventRequest;
 
@@ -38,10 +39,10 @@ class EventsController extends Controller
         $inputs = $request->only([
             'when',
             'image',
-            'title',
-            'description'
+            'translations',
         ]);
-        $event = Event::create($inputs);
+
+        (new Store())->run($inputs);
 
         return $this->response->created();
     }
