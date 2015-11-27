@@ -22,4 +22,25 @@ class Event extends Model
         'when',
         'image'
     ];
+
+    /**
+     * Returns the locales of the entity based on the current locale.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function translation()
+    {
+        return $this->hasOne(EventText::class)
+            ->where('lang', app()->getLocale());
+    }
+
+    /**
+     * Translations related to the Event.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function translations()
+    {
+        return $this->hasMany(EventText::class);
+    }
 }

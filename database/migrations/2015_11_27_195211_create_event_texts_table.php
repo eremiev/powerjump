@@ -15,6 +15,7 @@ class CreateEventTextsTable extends Migration
         Schema::create('event_texts', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('event_id');
+            $table->string('lang', 3);
             $table->string('title', 200);
             $table->text('description');
             $table->timestamps();
