@@ -15,7 +15,7 @@ class CreateProjectTextsTable extends Migration
         Schema::create('project_texts', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('project_id');
-            $table->string('title');
+            $table->string('title', 200);
             $table->text('description');
             $table->timestamps();
 
