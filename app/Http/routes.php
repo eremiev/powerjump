@@ -29,7 +29,7 @@ Route::group([
     | API Auth routes
     |--------------------------------------------------------------------------
     */
-    Route::group(['middleware' => 'jwt.auth'], function () {
+//    Route::group(['middleware' => 'jwt.auth'], function () {
         Route::resource('roles', 'RolesController', [
             'only' => ['index', 'show', 'store', 'update', 'destroy']
         ]);
@@ -51,7 +51,7 @@ Route::group([
             'only' => ['index', 'show', 'store', 'update', 'destroy']
         ]);
 
-    });
+//    });
 });
 
 
