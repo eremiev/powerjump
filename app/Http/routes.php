@@ -1,7 +1,10 @@
 <?php
 
+
 Route::get('/', function () {
-    return view('welcome');
+
+    View::addExtension('html', 'php');
+    return View::make('index');
 });
 
 
@@ -30,26 +33,26 @@ Route::group([
     |--------------------------------------------------------------------------
     */
 //    Route::group(['middleware' => 'jwt.auth'], function () {
-        Route::resource('roles', 'RolesController', [
-            'only' => ['index', 'show', 'store', 'update', 'destroy']
-        ]);
+    Route::resource('roles', 'RolesController', [
+        'only' => ['index', 'show', 'store', 'update', 'destroy']
+    ]);
 
-        Route::resource('members', 'MembersController', [
-            'only' => ['index', 'show', 'store', 'update', 'destroy']
-        ]);
+    Route::resource('members', 'MembersController', [
+        'only' => ['index', 'show', 'store', 'update', 'destroy']
+    ]);
 
 
-        Route::resource('administrators', 'AdministratorsController', [
-            'only' => ['index', 'show', 'store', 'update', 'destroy']
-        ]);
+    Route::resource('administrators', 'AdministratorsController', [
+        'only' => ['index', 'show', 'store', 'update', 'destroy']
+    ]);
 
-        Route::resource('events', 'EventsController', [
-            'only' => ['index', 'show', 'store', 'update', 'destroy']
-        ]);
+    Route::resource('events', 'EventsController', [
+        'only' => ['index', 'show', 'store', 'update', 'destroy']
+    ]);
 
-        Route::resource('projects', 'ProjectsController', [
-            'only' => ['index', 'show', 'store', 'update', 'destroy']
-        ]);
+    Route::resource('projects', 'ProjectsController', [
+        'only' => ['index', 'show', 'store', 'update', 'destroy']
+    ]);
 
 //    });
 });

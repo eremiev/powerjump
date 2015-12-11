@@ -1,7 +1,7 @@
 angular.module('eventController', [])
 
 // inject the Comment service into our controller
-    .controller('mainController', function ($scope, $http, Comment) {
+    .controller('mainController', function ($scope, $http, Event) {
 
         // object to hold all the data for the new event form
         $scope.eventData = {};
@@ -12,9 +12,10 @@ angular.module('eventController', [])
         // get all the events first and bind it to the $scope.events object
         // use the function we created in our service
         // GET ALL EVENTS ====================================================
-        Comment.get()
+        Event.get()
             .success(function (data) {
-                $scope.events = data;
+                $scope.events = data.data;
+
                 $scope.loading = false;
             });
 
@@ -26,13 +27,13 @@ angular.module('eventController', [])
 
             // save the event. pass in event data from the form
             // use the function we created in our service
-            Comment.save($scope.eventData)
+            Event.save($scope.eventData)
                 .success(function (data) {
 
                     // if successful, we'll need to refresh the event list
-                    Comment.get()
+                    Event.get()
                         .success(function (getData) {
-                            $scope.events = getData;
+                            $scope.events = getData.data;
                             $scope.loading = false;
                         });
 
@@ -48,13 +49,13 @@ angular.module('eventController', [])
             $scope.loading = true;
 
             // use the function we created in our service
-            Comment.destroy(id)
+            Event.destroy(id)
                 .success(function (data) {
 
                     // if successful, we'll need to refresh the event list
-                    Comment.get()
+                    Event.get()
                         .success(function (getData) {
-                            $scope.comments = getData;
+                            $scope.events = getData.data;
                             $scope.loading = false;
                         });
 
