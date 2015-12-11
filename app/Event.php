@@ -22,8 +22,7 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'when',
-        'image'
+        'date',
     ];
 
     /**
@@ -45,5 +44,15 @@ class Event extends Model
     public function translations()
     {
         return $this->hasMany(EventText::class);
+    }
+
+    /**
+     * Photos related to the Event.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function photos()
+    {
+        return $this->hasMany(Gallery::class, 'type_id');
     }
 }

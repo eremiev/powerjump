@@ -5,12 +5,14 @@ namespace App\Queries\Event;
 
 use DB;
 use App\Event;
+use App\Queries\Activity;
 
-class Store
+class Store extends Activity
 {
     public function run($inputs)
     {
         $translations = $inputs['translations'];
+        $images = $inputs['images'];
 
         DB::beginTransaction();
 
@@ -23,6 +25,9 @@ class Store
                 'lang' => $fields['lang'],
             ]);
         }
+//        foreach ($images as $image) {
+            $this->storeImage($event, $images, 'event');
+//        }
 
         DB::commit();
     }
