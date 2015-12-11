@@ -1,9 +1,18 @@
 var eventApp = angular
 
-    .module('eventApp',
-    ['eventController',
-        'eventService'
-    ])
+    .module('eventApp', ['eventController', 'eventService', 'ngRoute'])
+    .config(function ($routeProvider, $locationProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'js/templates/Home.html'
+            })
+            .when('/event', {
+                templateUrl: 'js/templates/Event.html'
+            })
+            .otherwise({redirectTo: '/'});
+
+        $locationProvider.html5Mode(true);
+    })
     .constant('headers', {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

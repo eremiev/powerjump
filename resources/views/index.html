@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Power Jump</title>
-
+    <base href="/"/>
     <!-- JS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
     <!-- Latest compiled and minified CSS -->
     <!-- load bootstrap via cdn -->
@@ -36,19 +37,33 @@
 </head>
 <!-- declare our angular app and controller -->
 <body class="container" ng-app="eventApp" ng-controller="mainController">
-<div class="col-md-8 col-md-offset-2">
-    <!-- PAGE TITLE =============================================== -->
-    <div class="page-header">
-        <h2>Laravel and Angular Single Page Application</h2>
-        <h4>Eventing System</h4>
+
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand">Администраторски панел</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Проекти</a>
+                </li>
+                <li>
+                    <a href="event">Събития</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="#" target="_blank">Изход</a></li>
+            </ul>
+
+        </div>
     </div>
+</div>
 
-    <div ng-hide="loading" ng-repeat="event in events">
-    <h3>Comment # {{ event.id }}
-    <small>by {{ event.when }}</small></h3>
-    <p>{{ event.image }}</p>
 
-    <p><a href="#" ng-click="deleteEvent(event.id)" class="text-muted">Delete</a></p>
+
+    <div ng-view>
+
     </div>
 
 

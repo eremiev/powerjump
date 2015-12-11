@@ -1,13 +1,26 @@
 angular.module('eventController', [])
 
 // inject the Comment service into our controller
-    .controller('mainController', function ($scope, $http, Event) {
+    .controller('mainController', function ($scope, $http, Event, $routeParams) {
 
         // object to hold all the data for the new event form
         $scope.eventData = {};
+        $scope.page = 'index';
 
         // loading variable to show the spinning loading icon
         $scope.loading = true;
+
+
+        /**
+         * Define a page.
+         * Reset errors and city.
+         *
+         * @param page
+         */
+        $scope.changePage = function(page) {
+            $scope.page = page;
+        };
+
 
         // get all the events first and bind it to the $scope.events object
         // use the function we created in our service

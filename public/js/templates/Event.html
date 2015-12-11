@@ -1,0 +1,38 @@
+<section class="container">
+    <div class="bs-component">
+        <ul class="nav nav-pills">
+            <li ng-show="page == 'index'"
+                ng-click="changePage('create')">
+                <a href="">Създай ново събитие</a>
+            </li>
+            <li ng-hide="page == 'index'"
+                ng-click="changePage('index')">
+                <a href="">Назад</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+
+        <div ng-show="page == 'index'">
+            <h1>page {{page}}</h1>
+
+            <div ng-hide="loading" ng-repeat="event in events">
+                <h3>Event # {{ event.id }}
+                    <small>by {{ event.when }}</small>
+                </h3>
+                <p>{{ event.image }}</p>
+
+                <p><a href="#" ng-click="deleteEvent(event.id)" class="text-muted">Delete</a></p>
+            </div>
+        </div>
+
+        <div ng-show="page == 'create'">
+            <h3 class="text-center">Ново събитие</h3>
+        </div>
+
+
+    </div>
+
+
+</section>

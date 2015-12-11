@@ -1,12 +1,19 @@
 <?php
 
-
-Route::get('/', function () {
-
+/**
+ * Redirects any other unregistered routes back to the main
+ * angular template so angular can deal with them
+ *
+ * @Get( "{path?}", as="catch.all" )
+ * @Where({"path": ".+"})
+ *
+ * @return Response
+ */
+Route::any('{path?}', function () {
     View::addExtension('html', 'php');
     return View::make('index');
-});
-
+})->where("path", "/");
+//})->where("path", ".+");
 
 /*
 |--------------------------------------------------------------------------
