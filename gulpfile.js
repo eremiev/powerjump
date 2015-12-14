@@ -16,13 +16,17 @@ var autoprefixer = require('gulp-autoprefixer');
 
 elixir(function (mix) {
     mix.styles([
+        '../../../node_modules/bootstrap/dist/css/bootstrap.min.css',
+        '../../../node_modules/bootstrap/dist/css/bootstrap-theme.css',
+        '../../../node_modules/bootstrap/dist/css/font-awesome.min.css',
         "main.css"
     ]);
 });
 
 elixir(function (mix) {
     mix
-        .scripts(['../../../node_modules/angular/angular.js',
+        .scripts([
+            '../../../node_modules/angular/angular.js',
             '../../../node_modules/angular-route/angular-route.js'], 'public/js/angular.js');
 });
 
