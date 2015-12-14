@@ -30008,4 +30008,135 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-//# sourceMappingURL=angular.js.map
+var eventApp = angular
+
+    .module('eventApp', ['eventController', 'eventService', 'ngRoute'])
+    .config(function ($routeProvider, $locationProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'js/templates/Home.html'
+            })
+            .when('/event', {
+                templateUrl: 'js/templates/Event.html'
+            })
+            .otherwise({redirectTo: '/'});
+
+        $locationProvider.html5Mode(true);
+    })
+    .constant('headers', {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json',
+            'Version': 1
+        }
+    });
+
+angular.module('eventController', [])
+
+// inject the Comment service into our controller
+    .controller('mainController', function ($scope, $http, Event, $routeParams) {
+
+        // object to hold all the data for the new event form
+
+        $scope.page = 'index';
+
+        // loading variable to show the spinning loading icon
+        $scope.loading = true;
+
+
+        /**
+         * Define a page.
+         * Reset errors and city.
+         *
+         * @param page
+         */
+        $scope.changePage = function (page) {
+            $scope.page = page;
+        };
+
+
+        // get all the events first and bind it to the $scope.events object
+        // use the function we created in our service
+        // GET ALL EVENTS ====================================================
+        Event.get()
+            .success(function (data) {
+                $scope.events = data.data;
+
+                $scope.loading = false;
+            });
+
+        // function to handle submitting the form
+        // SAVE A EVENT ====================================================
+        $scope.submitEvent = function (eventData) {
+            $scope.loading = true;
+
+            // save the event. pass in event data from the form
+            // use the function we created in our service
+            Event.save(eventData)
+                .success(function (data) {
+
+                    // if successful, we'll need to refresh the event list
+                    Event.get()
+                        .success(function (getData) {
+                            $scope.events = getData.data;
+                            $scope.loading = false;
+                        });
+
+                })
+                .error(function (data) {
+                    console.log(data);
+                });
+        };
+
+        // function to handle deleting a event
+        // DELETE A EVENT ====================================================
+        $scope.deleteEvent = function (id) {
+            $scope.loading = true;
+
+            // use the function we created in our service
+            Event.destroy(id)
+                .success(function (data) {
+
+                    // if successful, we'll need to refresh the event list
+                    Event.get()
+                        .success(function (getData) {
+                            $scope.events = getData.data;
+                            $scope.loading = false;
+                        });
+
+                });
+        };
+
+
+    });
+angular.module('eventService', [])
+
+    .factory('Event', function ($http, headers) {
+
+        return {
+            // get all the events
+            get: function () {
+                return $http.get('/api/events?with=translation', headers);
+            },
+
+            // save a event (pass in event data)
+            save: function (eventData) {
+                return $http({
+                    method: 'POST',
+                    url: '/api/events',
+                    data: {test: 'test'},
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                        'Accept': 'application/json',
+                        'Version': 1
+                    }
+                });
+            },
+
+            // destroy a event
+            destroy: function (id) {
+                return $http.delete('/api/events/' + id, headers);
+            }
+        }
+    });
+//# sourceMappingURL=all.js.map
