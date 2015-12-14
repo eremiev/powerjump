@@ -1,5 +1,4 @@
 /bootstrap/compiled.php
-.env.*.php
-node_modules
-.env.php
+.idea/
+node_modules/
 .env
