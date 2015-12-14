@@ -10,7 +10,16 @@ angular.module('eventService', [])
 
             // save a event (pass in event data)
             save: function (eventData) {
-                return $http.post('/api/events', $.param(eventData), headers);
+                return $http({
+                    method: 'POST',
+                    url: '/api/events',
+                    data: {test: 'test'},
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                        'Accept': 'application/json',
+                        'Version': 1
+                    }
+                });
             },
 
             // destroy a event

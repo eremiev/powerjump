@@ -10,7 +10,7 @@ class EventRequest extends Request
      * @var array
      */
     protected $storeRules = [
-        'when' => 'required|date',
+        'date' => 'date',
       //  'image' => 'required|image'
     ];
 

@@ -36,12 +36,12 @@ class EventsController extends Controller
      */
     public function store(EventRequest $request)
     {
-        $inputs = $request->only([
-            'date',
-            'image',
-            'translations',
-        ]);
-
+//        $inputs = $request->only([
+//            'date',
+//            'image',
+//            'translations',
+//        ]);
+dd($request->all());
         (new Store())->run($inputs);
 
         return $this->response->created();

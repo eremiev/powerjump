@@ -4,7 +4,7 @@ angular.module('eventController', [])
     .controller('mainController', function ($scope, $http, Event, $routeParams) {
 
         // object to hold all the data for the new event form
-        $scope.eventData = {};
+
         $scope.page = 'index';
 
         // loading variable to show the spinning loading icon
@@ -17,7 +17,7 @@ angular.module('eventController', [])
          *
          * @param page
          */
-        $scope.changePage = function(page) {
+        $scope.changePage = function (page) {
             $scope.page = page;
         };
 
@@ -34,13 +34,12 @@ angular.module('eventController', [])
 
         // function to handle submitting the form
         // SAVE A EVENT ====================================================
-        $scope.submitEvent = function () {
+        $scope.submitEvent = function (eventData) {
             $scope.loading = true;
-
 
             // save the event. pass in event data from the form
             // use the function we created in our service
-            Event.save($scope.eventData)
+            Event.save(eventData)
                 .success(function (data) {
 
                     // if successful, we'll need to refresh the event list
