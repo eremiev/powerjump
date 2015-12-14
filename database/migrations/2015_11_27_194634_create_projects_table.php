@@ -14,17 +14,11 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('event_id');
             $table->date('date');
+            $table->string('image', 150);
             $table->timestamps();
 
-            $table->index('event_id');
 
-            $table->foreign('event_id')
-                ->references('id')
-                ->on('events')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
         });
     }
 

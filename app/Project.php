@@ -21,6 +21,7 @@ class Project extends Model
     protected $fillable = [
         'event_id',
         'date',
+        'image'
     ];
 
     /**
@@ -51,6 +52,6 @@ class Project extends Model
      */
     public function events()
     {
-        return $this->hasMany(Event::class);
+        return $this->belongsToMany(Event::class)->withTimestamps();
     }
 }

@@ -37,8 +37,9 @@ class EventsController extends Controller
     public function store(EventRequest $request)
     {
         $inputs = $request->only([
+            'project_id',
             'date',
-            'images',
+            'image',
             'translations',
         ]);
 

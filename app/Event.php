@@ -23,6 +23,7 @@ class Event extends Model
      */
     protected $fillable = [
         'date',
+        'image'
     ];
 
     /**
@@ -44,6 +45,15 @@ class Event extends Model
     public function translations()
     {
         return $this->hasMany(EventText::class);
+    }
+    /**
+     * Projects related to the Event.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function events()
+    {
+        return $this->belongsToMany(Project::class)->withTimestamps();
     }
 
     /**
