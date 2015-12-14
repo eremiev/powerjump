@@ -35,6 +35,7 @@ class Kernel extends HttpKernel
         'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
         'api.version' => \App\Http\Middleware\ApiVersion::class,
         'language' => \App\Http\Middleware\Language::class,
-        'paginate' => \App\Http\Middleware\Paginate::class
+        'paginate' => \App\Http\Middleware\Paginate::class,
+        'ajax' => \App\Http\Middleware\OnlyAjax::class,
     ];
 }

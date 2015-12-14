@@ -1,0 +1,91 @@
+<section class="container">
+    <div class="bs-component">
+        <ul class="nav nav-pills">
+            <li ng-show="page == 'index'"
+                ng-click="changePage('create')">
+                <a href="">Създай ново събитие</a>
+            </li>
+            <li ng-hide="page == 'index'"
+                ng-click="changePage('index')">
+                <a href="">Назад</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+
+        <!-- List with all events -->
+        <div ng-show="page == 'index'">
+            <h1>page {{page}}</h1>
+
+            <div ng-hide="loading" ng-repeat="event in events">
+                <h3>Event # {{ event.id }}
+                    <small>by {{ event.when }}</small>
+                </h3>
+                <p>{{ event.image }}</p>
+
+                <p><a href="#" ng-click="deleteEvent(event.id)" class="text-muted">Delete</a></p>
+            </div>
+        </div>
+
+        <!-- Form for create event -->
+        <div ng-show="page == 'create'">
+            <div class="well bs-component">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend>Ново събитие</legend>
+                        <div class="form-group">
+                            <label for="title" class="col-lg-2 control-label">Заглавие</label>
+
+                            <div class="col-lg-10">
+                                <input class="form-control" id="title" placeholder="Заглавие" ng-model="event.title"
+                                       type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="description" class="col-lg-2 control-label">Описание</label>
+
+                                <div class="col-lg-10">
+                                    <textarea class="form-control" rows="3" id="description"
+                                              ng-model="event.description"></textarea>
+                                    <span class="help-block">Опишете на кратко събитието.</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="project" class="col-lg-2 control-label">Част от проект:</label>
+
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="project">
+                                        <option>Project 1</option>
+                                        <option>Project 2</option>
+                                        <option>Project 3</option>
+                                        <option>Project 4</option>
+                                        <option>Project 5</option>
+                                    </select>
+                                    <br>
+                                    <select multiple="" class="form-control">
+                                        <option>Project 1</option>
+                                        <option>Project 2</option>
+                                        <option>Project 3</option>
+                                        <option>Project 4</option>
+                                        <option>Project 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group pull-right">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button type="reset" class="btn btn-default">Изчисти</button>
+                                    <button type="submit" class="btn btn-primary" ng-click="submitEvent(event)">Запиши
+                                    </button>
+                                </div>
+                            </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</section>

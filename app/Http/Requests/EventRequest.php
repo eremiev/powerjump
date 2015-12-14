@@ -11,6 +11,7 @@ class EventRequest extends Request
      */
     protected $storeRules = [
         'date' => 'required|date',
+      //  'image' => 'required|image'
     ];
 
     /**
@@ -32,7 +33,7 @@ class EventRequest extends Request
     {
         switch (true) {
             case $this->wantsToList():
-                $rules['with'] = 'relations:translation,translations,photos';
+                $rules['with'] = 'relations:translation,translations';
                 break;
             case $this->wantsToStore();
                 $rules = $this->storeRules;

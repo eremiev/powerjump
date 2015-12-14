@@ -23,7 +23,6 @@ class Store extends Activity
             ]);
 
         } else {
-
             $event = Event::create([
                 'date' => $inputs['date']
             ]);

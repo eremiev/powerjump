@@ -29,13 +29,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('projects')) {
-
-            Schema::table('projects', function (Blueprint $table) {
-                $table->dropForeign('projects_event_id_foreign');
-            });
-
-            Schema::drop('projects');
-        }
+        Schema::dropIfExists('projects');
     }
 }

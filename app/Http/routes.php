@@ -1,9 +1,18 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+/**
+ * Redirects any other unregistered routes back to the main
+ * angular template so angular can deal with them
+ *
+ * @Get( "{path?}", as="catch.all" )
+ * @Where({"path": "^((?!api).)*$"})
+ *
+ * @return Response
+ */
+Route::any('{path?}', function () {
+    View::addExtension('html', 'php');
+    return View::make('index');
+})->where("path", "^((?!api).)*$");
 
 /*
 |--------------------------------------------------------------------------
@@ -29,29 +38,29 @@ Route::group([
     | API Auth routes
     |--------------------------------------------------------------------------
     */
-    Route::group(['middleware' => 'jwt.auth'], function () {
-        Route::resource('roles', 'RolesController', [
-            'only' => ['index', 'show', 'store', 'update', 'destroy']
-        ]);
+//    Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::resource('roles', 'RolesController', [
+        'only' => ['index', 'show', 'store', 'update', 'destroy']
+    ]);
 
-        Route::resource('members', 'MembersController', [
-            'only' => ['index', 'show', 'store', 'update', 'destroy']
-        ]);
+    Route::resource('members', 'MembersController', [
+        'only' => ['index', 'show', 'store', 'update', 'destroy']
+    ]);
 
 
-        Route::resource('administrators', 'AdministratorsController', [
-            'only' => ['index', 'show', 'store', 'update', 'destroy']
-        ]);
+    Route::resource('administrators', 'AdministratorsController', [
+        'only' => ['index', 'show', 'store', 'update', 'destroy']
+    ]);
 
-        Route::resource('events', 'EventsController', [
-            'only' => ['index', 'show', 'store', 'update', 'destroy']
-        ]);
+    Route::resource('events', 'EventsController', [
+        'only' => ['index', 'show', 'store', 'update', 'destroy']
+    ]);
 
-        Route::resource('projects', 'ProjectsController', [
-            'only' => ['index', 'show', 'store', 'update', 'destroy']
-        ]);
+    Route::resource('projects', 'ProjectsController', [
+        'only' => ['index', 'show', 'store', 'update', 'destroy']
+    ]);
 
-    });
+//    });
 });
 
 
