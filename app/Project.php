@@ -20,7 +20,7 @@ class Project extends Model
      */
     protected $fillable = [
         'event_id',
-        'when',
+        'date',
         'image'
     ];
 

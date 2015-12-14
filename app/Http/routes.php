@@ -5,15 +5,14 @@
  * angular template so angular can deal with them
  *
  * @Get( "{path?}", as="catch.all" )
- * @Where({"path": ".+"})
+ * @Where({"path": "^((?!api).)*$"})
  *
  * @return Response
  */
 Route::any('{path?}', function () {
     View::addExtension('html', 'php');
     return View::make('index');
-})->where("path", "/");
-//})->where("path", ".+");
+})->where("path", "^((?!api).)*$");
 
 /*
 |--------------------------------------------------------------------------

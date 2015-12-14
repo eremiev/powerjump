@@ -22,7 +22,7 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'when',
+        'date',
         'image'
     ];
 
