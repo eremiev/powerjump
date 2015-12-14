@@ -15,18 +15,26 @@ var autoprefixer = require('gulp-autoprefixer');
  */
 
 elixir(function (mix) {
-    mix.less('app.less');
+    mix.styles([
+        "main.css"
+    ]);
 });
 
-gulp.task('css', function () {
-    gulp.src('resources/assets/sass/main.sass')
-        .pipe(sass())
-        .pipe(autoprefixer('last 10 version'))
-        .pipe(gulp.dest('public/css'))
+elixir(function (mix) {
+    mix
+        .scripts(['../../../node_modules/angular/angular.js',
+            '../../../node_modules/angular-route/angular-route.js'], 'public/js/angular.js');
 });
 
-gulp.task('watch', function () {
-    gulp.watch('resources/assets/sass/**/*.sass', ['css']);
-});
-
-gulp.task('default', ['watch']);
+//gulp.task('css', function () {
+//    gulp.src('resources/assets/sass/main.sass')
+//        .pipe(sass())
+//        .pipe(autoprefixer('last 10 version'))
+//        .pipe(gulp.dest('public/css'))
+//});
+//
+//gulp.task('watch', function () {
+//    gulp.watch('resources/assets/sass/**/*.sass', ['css']);
+//});
+//
+//gulp.task('default', ['watch']);
