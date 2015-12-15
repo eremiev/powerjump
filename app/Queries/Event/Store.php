@@ -12,21 +12,15 @@ class Store extends Activity
 {
     public function run($inputs)
     {
-        $translations = $inputs['translations'];
-        $images = $inputs['image'];
-
         DB::beginTransaction();
-        if (isset($inputs['project_id'])) {
-            $project = Project::find($inputs['project_id']);
-            $event = $project->events()->create([
-                'date' => $inputs['date']
-            ]);
 
-        } else {
-            $event = Event::create([
-                'date' => $inputs['date']
-            ]);
-        }
+        $translations = $inputs['translations'];
+        $file = $inputs['file'];
+
+        $event = Event::create([
+            'date' => $inputs['date']
+        ]);
+        $event->projects()->attach($inputs['projects']);
 
         foreach ($translations as $fields) {
             $event->translations()->create([
@@ -35,10 +29,9 @@ class Store extends Activity
                 'lang' => $fields['lang'],
             ]);
         }
-//        foreach ($images as $image) {
 
-        $this->storeImage($event, $images, 'event');
-//        }
+        $this->storeImage($event, $file, 'event');
+
 
         DB::commit();
     }

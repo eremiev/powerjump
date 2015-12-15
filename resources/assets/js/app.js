@@ -9,6 +9,9 @@ var eventApp = angular
             .when('/event', {
                 templateUrl: 'js/templates/Event.html'
             })
+            .when('/emo', {
+                template: '<div>emoo</div>'
+            })
             .otherwise({redirectTo: '/'});
 
         $locationProvider.html5Mode(true);

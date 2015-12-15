@@ -26,6 +26,8 @@ class Event extends Model
         'image'
     ];
 
+    protected $morphClass = 'event';
+
     /**
      * Returns the locales of the entity based on the current locale.
      *
@@ -46,23 +48,24 @@ class Event extends Model
     {
         return $this->hasMany(EventText::class);
     }
+
     /**
      * Projects related to the Event.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function events()
+    public function projects()
     {
         return $this->belongsToMany(Project::class)->withTimestamps();
     }
 
     /**
-     * Photos related to the Event.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * Get all of the staff member's photos.
      */
     public function photos()
     {
-        return $this->hasMany(Gallery::class, 'type_id');
+        return $this->morphMany(Photo::class, 'imageable');
     }
+
+
 }

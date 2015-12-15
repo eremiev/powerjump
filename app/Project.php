@@ -24,6 +24,8 @@ class Project extends Model
         'image'
     ];
 
+    protected $morphClass = 'project';
+
     /**
      * Returns the locales of the entity based on the current locale.
      *
@@ -53,5 +55,13 @@ class Project extends Model
     public function events()
     {
         return $this->belongsToMany(Event::class)->withTimestamps();
+    }
+
+    /**
+     * Get all of the product's photos.
+     */
+    public function photos()
+    {
+        return $this->morphMany(Photo::class, 'imageable');
     }
 }

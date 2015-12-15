@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Event;
 use App\Queries\Event\Store;
-use App\Http\Controllers\Controller;
+use App\Queries\Event\Delete;
+use App\Queries\Event\Update;
 use App\Http\Requests\EventRequest;
+use App\Http\Controllers\Controller;
 
 
 class EventsController extends Controller
@@ -37,12 +39,11 @@ class EventsController extends Controller
     public function store(EventRequest $request)
     {
         $inputs = $request->only([
-            'project_id',
+            'projects',
             'date',
-            'image',
+            'file',
             'translations',
         ]);
-
         (new Store())->run($inputs);
 
         return $this->response->created();
@@ -57,7 +58,9 @@ class EventsController extends Controller
      */
     public function show(EventRequest $request, $eventId)
     {
-        $event = Event::findOrFail($eventId);
+        $relations = $this->prepareRelations($request->get('with'));
+        $event = Event::withRelations($relations)
+            ->findOrFail($eventId);
 
         return $this->response->ok($event);
     }
@@ -71,6 +74,13 @@ class EventsController extends Controller
      */
     public function update(EventRequest $request, $eventId)
     {
+        $inputs = $request->only([
+            'projects',
+            'date',
+            'file',
+            'translations',
+        ]);
+        (new Update())->run($inputs, $eventId);
 
         return $this->response->noContent();
     }
@@ -84,7 +94,8 @@ class EventsController extends Controller
      */
     public function destroy(EventRequest $request, $eventId)
     {
-        Event::findOrFail($eventId)->delete();
+        $event = Event::findOrFail($eventId);
+        (new Delete())->run($event);
 
         return $this->response->noContent();
     }

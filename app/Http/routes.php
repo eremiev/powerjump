@@ -53,8 +53,10 @@ Route::group([
     ]);
 
     Route::resource('events', 'EventsController', [
-        'only' => ['index', 'show', 'store', 'update', 'destroy']
+        'only' => ['index', 'show', 'store', 'destroy']
     ]);
+
+    Route::post('events/{id}', 'EventsController@update');
 
     Route::resource('projects', 'ProjectsController', [
         'only' => ['index', 'show', 'store', 'update', 'destroy']
