@@ -1,7 +1,7 @@
 angular.module('eventController', [])
 
 // inject the Comment service into our controller
-    .controller('mainController', function ($scope, $http, Event, $routeParams) {
+    .controller('mainController', function ($scope, $http, Event) {
 
         // object to hold all the data for the new event form
 

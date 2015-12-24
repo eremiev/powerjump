@@ -1,18 +1,25 @@
 var eventApp = angular
 
-    .module('eventApp', ['eventController', 'eventService', 'ngRoute'])
-    .config(function ($routeProvider, $locationProvider) {
-        $routeProvider
-            .when('/', {
-                templateUrl: 'js/templates/Home.html'
+    .module('eventApp', ['eventController', 'eventService', 'ui.router'])
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+        // For any unmatched url, redirect to /state1
+        $urlRouterProvider.otherwise("/");
+        //
+        // Now set up the states
+        $stateProvider
+            .state('home', {
+                url: "/",
+                templateUrl: "js/templates/Home.html"
             })
-            .when('/event', {
-                templateUrl: 'js/templates/Event.html'
+            .state('event', {
+                url: "/event",
+                templateUrl: "js/templates/Event.html"
             })
-            .when('/emo', {
-                template: '<div>emoo</div>'
-            })
-            .otherwise({redirectTo: '/'});
+            .state('project', {
+                url: "/project",
+                templateUrl: "../resources/templates/Home.html"
+            });
 
         $locationProvider.html5Mode(true);
     })
