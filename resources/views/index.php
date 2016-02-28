@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <title>Power Jump</title>
-    <base href="/"/>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="js/all.js"></script>
+    <base href="/">
     <link rel="stylesheet" href="css/all.css"/>
+    <script src="js/all.js"></script>
+
 
 </head>
 <!-- declare our angular app and controller -->
-<body class="container" ng-app="eventApp" ng-controller="mainController">
+<body class="container" ng-app="powerJump">
 
 <div class="navbar navbar-default">
     <div class="container">
@@ -35,11 +35,8 @@
 </div>
 
 
-<div ui-view>
-
-</div>
+<div ui-view></div>
 
 
-</div>
 </body>
 </html>

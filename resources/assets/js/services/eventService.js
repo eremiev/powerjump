@@ -1,6 +1,7 @@
-angular.module('eventService', [])
+angular.module('powerJump', [])
 
-    .factory('Event', function ($http, headers) {
+    .service('Event', function ($http, headers) {
+        console.log('eventService');
 
         return {
             // get all the events

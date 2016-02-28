@@ -31,15 +31,16 @@ elixir(function (mix) {
             'app.js',
             'controllers/eventController.js',
             'services/eventService.js'
+
         ]);
 });
 
-gulp.task('css', function () {
-    gulp.src('resources/assets/css/main.css')
-        .pipe(sass())
-        .pipe(autoprefixer('last 10 version'))
-        .pipe(gulp.dest('public/css'))
-});
+//gulp.task('css', function () {
+//    gulp.src('resources/assets/css/main.css')
+//        .pipe(sass())
+//        .pipe(autoprefixer('last 10 version'))
+//        .pipe(gulp.dest('public/css'))
+//});
 
 //gulp.task('watch', function () {
 //    gulp.watch('resources/assets/sass/**/*.sass', ['css']);

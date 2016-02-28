@@ -1,28 +1,32 @@
-var eventApp = angular
+angular.module('powerJump', ['ui.router'])
 
-    .module('eventApp', ['eventController', 'eventService', 'ui.router'])
-    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
+        console.log('app.js');
         // For any unmatched url, redirect to /state1
         $urlRouterProvider.otherwise("/");
-        //
+
         // Now set up the states
         $stateProvider
             .state('home', {
                 url: "/",
-                templateUrl: "js/templates/Home.html"
+                templateUrl: "templates/private/Home.html"
+                //controller: 'mainController'
             })
             .state('event', {
                 url: "/event",
-                templateUrl: "js/templates/Event.html"
-            })
-            .state('project', {
-                url: "/project",
-                templateUrl: "../resources/templates/Home.html"
+                templateUrl: "templates/private/Event.html",
+                controller: 'eventController'
+
             });
+            //.state('project', {
+            //    url: "/project",
+            //    templateUrl: "../resources/templates/Home.html"
+            //    //controller: 'mainController'
+            //});
 
         $locationProvider.html5Mode(true);
-    })
+    }])
     .constant('headers', {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
