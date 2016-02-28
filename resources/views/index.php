@@ -5,7 +5,6 @@
     <title>Power Jump</title>
     <base href="/">
     <link rel="stylesheet" href="css/all.css"/>
-    <script src="js/all.js"></script>
 
 
 </head>
@@ -38,5 +37,6 @@
 <div ui-view></div>
 
 
+<script src="js/all.js"></script>
 </body>
 </html>
