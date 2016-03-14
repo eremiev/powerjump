@@ -29,8 +29,9 @@ elixir(function (mix) {
             '../../../node_modules/angular/angular.js',
             '../../../node_modules/angular-ui-router/release/angular-ui-router.js',
             'app.js',
-            'controllers/eventController.js'
-          //  'services/eventService.js'
+            'controllers/eventController.js',
+            'controllers/event.route.js'
+            //'services/eventService.js'
 
         ]);
 });

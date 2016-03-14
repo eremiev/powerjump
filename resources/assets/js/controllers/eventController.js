@@ -2,6 +2,7 @@
     'use strict';
 
     angular.module('powerJump')
+
         .controller('eventController', ['$scope', '$http', 'Event', function ($scope, $http, Event) {
 
             // object to hold all the data for the new event form
@@ -76,6 +77,35 @@
             };
 
 
-        }]);
+        }])
+        .service('Event', function ($http, headers) {
+            console.log('eventService');
+
+            return {
+                // get all the events
+                get: function () {
+                    return $http.get('/api/events?with=translation', headers);
+                },
+
+                // save a event (pass in event data)
+                save: function (eventData) {
+                    return $http({
+                        method: 'POST',
+                        url: '/api/events',
+                        data: {test: 'test'},
+                        headers: {
+                            'Content-Type': 'multipart/form-data',
+                            'Accept': 'application/json',
+                            'Version': 1
+                        }
+                    });
+                },
+
+                // destroy a event
+                destroy: function (id) {
+                    return $http.delete('/api/events/' + id, headers);
+                }
+            }
+        });
 
 })();

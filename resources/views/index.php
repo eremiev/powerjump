@@ -14,7 +14,7 @@
 <div class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a ui-sref="home" class="navbar-brand">Администраторски панел</a>
+            <a ui-sref="public.home" class="navbar-brand">Администраторски панел</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
@@ -22,7 +22,7 @@
                     <a ui-sref="project">Проекти</a>
                 </li>
                 <li>
-                    <a ui-sref="event">Събития</a>
+                    <a ui-sref="private.event">Събития</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav pull-right">
