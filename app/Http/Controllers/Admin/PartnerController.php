@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Project;
+use App\Partner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Redirect;
 
-class ProjectController extends Controller
+class PartnerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(10);
+        $partners = Partner::paginate(10);
 
-        return view('admin.project.index', compact('projects'));
+        return view('admin.partner.index', compact('partners'));
     }
 
     /**
@@ -28,7 +27,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.project.create', compact(['tags']));
+        //
     }
 
     /**
@@ -39,9 +38,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = $request->only('title', 'description', 'when');
-        (new Store())->run($inputs);
-        return Redirect::route('admin.projects.index');
+        //
     }
 
     /**

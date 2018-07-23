@@ -5,7 +5,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header">
+                        @yield('header')
+                    </div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -13,11 +15,14 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                        <div class="container">
 
-                        You are logged in!
+                            @yield('container')
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
