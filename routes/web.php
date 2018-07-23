@@ -17,4 +17,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group([
+    'namespace' => 'Admin',
+    'middleware' => 'auth',
+    'prefix' => 'admin',
+], function () {
+    Route::resource('projects', 'ProjectController', [
+        'only' => ['index', 'create', 'show', 'store', 'edit', 'update', 'destroy'],
+        'as' => 'admin'
+    ]);
+
+    Route::resource('events', 'EventController', [
+        'only' => ['index', 'create', 'show', 'store', 'edit', 'update', 'destroy'],
+        'as' => 'admin'
+    ]);
+
+    Route::resource('partners', 'PartnerController', [
+        'only' => ['index', 'create', 'show', 'store', 'edit', 'update', 'destroy'],
+        'as' => 'admin'
+    ]);
+});
