@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Project;
+use App\Queries\Project\Store;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
@@ -28,7 +29,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.project.create', compact(['tags']));
+        return view('admin.project.create');
     }
 
     /**
@@ -39,9 +40,10 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = $request->only('title', 'description', 'when');
+        $inputs = $request->only(['title', 'description', 'when']);
         (new Store())->run($inputs);
-        return Redirect::route('admin.projects.index');
+
+        return redirect()->route('admin.projects.index');
     }
 
     /**
