@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Partner;
+use App\Queries\Partner\Store;
+use App\Queries\Partner\Update;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -27,7 +29,7 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.partner.create');
     }
 
     /**
@@ -38,18 +40,10 @@ class PartnerController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $inputs = $request->only(['name', 'description']);
+        (new Store())->run($inputs);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->route('admin.partners.index');
     }
 
     /**
@@ -60,7 +54,9 @@ class PartnerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $partner = Partner::find($id);
+
+        return view('admin.partner.edit', compact('partner'));
     }
 
     /**
@@ -72,7 +68,10 @@ class PartnerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inputs = $request->only(['name', 'description']);
+        (new Update())->run($id, $inputs);
+
+        return redirect()->route('admin.partners.index');
     }
 
     /**
@@ -83,6 +82,9 @@ class PartnerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project = Partner::find($id);
+        $project->delete();
+
+        return redirect()->route('admin.partners.index');
     }
 }

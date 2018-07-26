@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Project;
 use App\Queries\Project\Store;
+use App\Queries\Project\Update;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Redirect;
 
 class ProjectController extends Controller
 {
@@ -47,17 +47,6 @@ class ProjectController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -65,7 +54,9 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project::find($id);
+
+        return view('admin.project.edit', compact('project'));
     }
 
     /**
@@ -77,7 +68,10 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inputs = $request->only(['title', 'description', 'when']);
+        (new Update())->run($id, $inputs);
+
+        return redirect()->route('admin.projects.index');
     }
 
     /**

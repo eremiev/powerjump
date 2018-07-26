@@ -4,7 +4,6 @@
     Събития
 @endsection
 @section('container')
-
     <table class="table">
         <thead>
         <tr>
@@ -22,13 +21,28 @@
                 <td>{{$event->title}}</td>
                 <td>{{ str_limit($event->description, $limit = 100, $end = '...')}}</td>
                 <td>{{$event->when}}</td>
-                <td class="small">промени|изтрий</td>
+                <td class="small">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <a href="{{route('admin.events.edit', $event->id)}}">
+                                <i class="fa fa-pencil" style="font-size:24px" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="col-lg-6">
+                            {{ Form::open(['route' => ['admin.events.destroy', $event->id], 'method' => 'delete']) }}
+                            <button type="submit" style="padding: 0;border: none;background: none; cursor: pointer;">
+                                <i class="fa fa-trash" style="font-size:24px" aria-hidden="true"></i>
+                            </button>
+                            {{ Form::close() }}
+                        </div>
+                    </div>
+                </td>
             </tr>
         @endforeach
         </tbody>
     </table>
 
-        <div class="text-center">
-            {{ $events->render() }}
-        </div>
+    <div class="text-center">
+        {{ $events->render() }}
+    </div>
 @endsection
