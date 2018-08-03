@@ -4,6 +4,7 @@
     Събития
 @endsection
 @section('container')
+    <a href="{{ URL::route('admin.events.create') }}" class="btn btn-default">Добави ново събитие</a>
     <table class="table">
         <thead>
         <tr>

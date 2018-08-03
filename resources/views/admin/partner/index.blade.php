@@ -4,6 +4,7 @@
     Партньори
 @endsection
 @section('container')
+    <a href="{{ URL::route('admin.partners.create') }}" class="btn btn-default">Добави нов партньор</a>
     <table class="table">
         <thead>
         <tr>

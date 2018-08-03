@@ -4,6 +4,7 @@
     Проекти
 @endsection
 @section('container')
+    <a href="{{ URL::route('admin.projects.create') }}" class="btn btn-default">Добави нов проект</a>
     <table class="table">
         <thead>
         <tr>
