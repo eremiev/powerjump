@@ -6,7 +6,8 @@
 @section('container')
     {!! Form::open(['route' => ['admin.projects.store'],
                            'method' => 'POST',
-                           'class'=>'form-horizontal']) !!}
+                           'class'=>'form-horizontal',
+                           'files' => true]) !!}
         <div class="form-group">
             <label for="title">Заглавие</label>
             <input type="text" class="form-control" name="title" id="title">
@@ -22,6 +23,12 @@
             <label for="when">Дата</label>
             <input id="when" type="date" name="when" min="2000-01-01"class="form-control">
         </div>
+
+        <div class="form-group">
+            <label for="image">Снимка</label>
+            <input id="image" type="file" name="image" class="form-control">
+        </div>
+
         <button type="submit" class="btn btn-primary">Запиши</button>
     {!! Form::close() !!}
 

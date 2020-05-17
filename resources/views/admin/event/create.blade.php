@@ -6,7 +6,8 @@
 @section('container')
     {!! Form::open(['route' => ['admin.events.store'],
                            'method' => 'POST',
-                           'class'=>'form-horizontal']) !!}
+                           'class'=>'form-horizontal',
+                           'files' => true]) !!}
     <div class="form-group">
         <label for="title">Заглавие</label>
         <input type="text" class="form-control" name="title" id="title">
@@ -26,6 +27,11 @@
     <div class="form-group">
         <label for="when">Проект</label>
         {{ Form::select('project_id', $projects, null, [ 'placeholder' =>'Няма свързан проект', 'class' => 'form-control']) }}
+    </div>
+
+    <div class="form-group">
+        <label for="image">Снимка</label>
+        <input id="image" type="file" name="image" class="form-control">
     </div>
 
     <button type="submit" class="btn btn-primary">Запиши</button>

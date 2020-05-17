@@ -43,7 +43,8 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = $request->only(['title', 'description', 'when', 'project_id']);
+
+        $inputs = $request->only(['title', 'description', 'when', 'project_id', 'image']);
         (new Store())->run($inputs);
 
         return redirect()->route('admin.events.index');

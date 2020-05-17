@@ -40,7 +40,7 @@ class PartnerController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = $request->only(['name', 'description']);
+        $inputs = $request->only(['name', 'description', 'image']);
         (new Store())->run($inputs);
 
         return redirect()->route('admin.partners.index');

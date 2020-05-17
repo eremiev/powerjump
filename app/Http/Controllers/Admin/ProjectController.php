@@ -40,7 +40,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = $request->only(['title', 'description', 'when']);
+        $inputs = $request->only(['title', 'description', 'when', 'image']);
         (new Store())->run($inputs);
 
         return redirect()->route('admin.projects.index');

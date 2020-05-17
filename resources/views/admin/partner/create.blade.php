@@ -6,7 +6,8 @@
 @section('container')
     {!! Form::open(['route' => ['admin.partners.store'],
                            'method' => 'POST',
-                           'class'=>'form-horizontal']) !!}
+                           'class'=>'form-horizontal',
+                           'files' => true]) !!}
     <div class="form-group">
         <label for="title">Име</label>
         <input type="text" class="form-control" name="name" id="name">
@@ -17,6 +18,12 @@
         <textarea id="description" name="description" ></textarea>
 
     </div>
+
+    <div class="form-group">
+        <label for="image">Снимка</label>
+        <input id="image" type="file" name="image" class="form-control">
+    </div>
+
     <button type="submit" class="btn btn-primary">Запиши</button>
     {!! Form::close() !!}
 
