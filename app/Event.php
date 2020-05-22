@@ -18,7 +18,7 @@ class Event extends Model
         'when'
     ];
 
-    public function image()
+    public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
     }

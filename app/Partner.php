@@ -16,7 +16,7 @@ class Partner extends Model
         'description'
     ];
 
-    public function image()
+    public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
     }

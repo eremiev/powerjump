@@ -27,7 +27,7 @@ class Store
         if ($inputs['image']) {
             try {
                 $filePath = $this->UserImageUpload($inputs['image']); //Passing $data->image as parameter to our created method
-                $project->image()->create([ 'url' => $filePath ]);
+                $project->images()->create([ 'url' => $filePath ]);
             } catch (\Exception $e) {
                 //Write your error message here
             }

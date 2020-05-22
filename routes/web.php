@@ -12,8 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.index');
 });
+
+Route::get('/about', 'PageController@about');
+Route::get('/projects', 'PageController@projects');
+Route::get('/events', 'PageController@events');
+Route::get('/products', 'PageController@products');
+Route::get('/partners', 'PageController@partners');
+Route::get('/contacts', 'PageController@contacts');
+
 
 Auth::routes();
 
