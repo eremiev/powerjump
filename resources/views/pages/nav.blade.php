@@ -21,7 +21,7 @@
         </nav>
         <div class="header_right top_align d-flex flex-row align-items-center justify-content-start">
             <div class="contact_button trans_400"><a href="{{ url('/contacts') }}">Контакти</a></div>
-            <div class="hamburger"><i class="fa about.htmlfa-bars" aria-hidden="true"></i></div>
+            <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
         </div>
     </div>
 </header>
@@ -35,7 +35,7 @@
                 <li><a href="{{ url('/') }}">Начало</a></li>
                 <li><a href="{{ url('/about') }}">За нас</a></li>
                 <li><a href="{{ url('/projects') }}">Проекти</a></li>
-                <li><a href="{{ url('/events') }}">Събития</a></li>
+                <li ><a href="{{ url('/events') }}">Събития</a></li>
                 <li><a href="{{ url('/products') }}">Продукти</a></li>
                 <li><a href="{{ url('/partners') }}">Партньори</a></li>
                 <li><a href="{{ url('/contacts') }}">Контакти</a></li>
