@@ -39,7 +39,7 @@
                             <div class="blog_post_container">
                                 <div class="blog_post_image text-center">
                                     @foreach($project->images as $image)
-                                        <img src="{{$image->url}}" alt=""/>
+                                        <img src="{{$image->url}}" style="height: 250px;" alt=""/>
                                         @break
                                     @endforeach
                                 </div>
