@@ -38,7 +38,7 @@
                                         <div></div>
                                         <div><span>Power Jump</span></div>
                                     </div>
-                                    <div class="button slide_button"><a href="#">Запиши се</a></div>
+                                    {{--<div class="button slide_button"><a href="#">Запиши се</a></div>--}}
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                     <div class="col">
                         <div class="home_slider_dots">
                             <ul id="home_slider_custom_dots" class="home_slider_custom_dots d-flex flex-row align-items-start justify-content-start">
-                                <li class="home_slider_custom_dot active">01.</li>
+                                {{--<li class="home_slider_custom_dot active">01.</li>--}}
                                 {{--<li class="home_slider_custom_dot">02.</li>--}}
                                 {{--<li class="home_slider_custom_dot">03.</li>--}}
                             </ul>

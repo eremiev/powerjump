@@ -30,6 +30,9 @@ Route::group([
     'middleware' => 'auth',
     'prefix' => 'admin',
 ], function () {
+
+    Route::get('/', 'ProjectController@index');
+
     Route::resource('projects', 'ProjectController', [
         'only' => ['index', 'create', 'show', 'store', 'edit', 'update', 'destroy'],
         'as' => 'admin'

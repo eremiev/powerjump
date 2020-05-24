@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="blog_post_container">
-                                <div class="blog_post_image">
+                                <div class="blog_post_image text-center">
                                     @foreach($project->images as $image)
                                         <img src="{{$image->url}}" alt=""/>
                                         @break

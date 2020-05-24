@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="cta_content text-center">Запиши се <a href="#">сега!</a></div>
+                <div class="cta_content text-center">Свържи се с <a href="{{ url('/contacts') }}">нас!</a></div>
             </div>
         </div>
     </div>
@@ -27,60 +27,47 @@
                     </div>
 
                     <div class="footer_text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                        <p></p>
                     </div>
                     <div class="social">
                         <ul class="d-flex flex-row align-items-center justify-content-start">
-                            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                            {{--<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>--}}
+                            <li><a href="https://www.facebook.com/PowerJumpClubBulgaria/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            {{--<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>--}}
+                            {{--<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>--}}
+                            {{--<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>--}}
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-2 offset-lg-1 footer_col">
                     <div class="footer_column">
-                        <div class="footer_title"><h3>Useful Links</h3></div>
+                        <div class="footer_title"><h3>Страници</h3></div>
                         <div class="footer_list">
                             <ul>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Subscriptions</a></li>
-                                <li><a href="#">Plans</a></li>
+                                <li><a href="{{ url('/about') }}">За нас</a></li>
+                                <li><a href="{{ url('/projects') }}">Проекти</a></li>
+                                <li><a href="{{ url('/events') }}">Събития</a></li>
+                                <li><a href="{{ url('/products') }}">Продукти</a></li>
+                                <li><a href="{{ url('/partners') }}">Партньори</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-2 footer_col">
+                <div class="col-lg-2 offset-lg-1 footer_col">
                     <div class="footer_column">
-                        <div class="footer_title"><h3>Features</h3></div>
+                        <div class="footer_title"><h3>Партньори</h3></div>
                         <div class="footer_list">
                             <ul>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Subscriptions</a></li>
-                                <li><a href="#">Plans</a></li>
+                                <li><a href="{{ url('/') }}">WildArt</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-2 footer_col">
-                    <div class="footer_column">
-                        <div class="footer_title"><h3>About us</h3></div>
-                        <div class="footer_list">
-                            <ul>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Subscriptions</a></li>
-                                <li><a href="#">Plans</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+
 
             </div>
         </div>

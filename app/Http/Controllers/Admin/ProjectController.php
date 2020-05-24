@@ -68,7 +68,7 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inputs = $request->only(['title', 'description', 'when']);
+        $inputs = $request->only(['title', 'description', 'when', 'image']);
         (new Update())->run($id, $inputs);
 
         return redirect()->route('admin.projects.index');
