@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+use App\Http\Controllers\PageController;
 
+
+Route::get('/', 'PageController@home');
 Route::get('/about', 'PageController@about');
 Route::get('/projects', 'PageController@projects');
 Route::get('/events', 'PageController@events');
@@ -24,6 +24,11 @@ Route::get('/contacts', 'PageController@contacts');
 
 
 Auth::routes();
+
+
+Route::get('/projects/{id}', [PageController::class, 'showProjects'])->name('projects.show');
+
+Route::get('/events/{id}', [PageController::class, 'showEvents'])->name('events.show');
 
 Route::group([
     'namespace' => 'Admin',

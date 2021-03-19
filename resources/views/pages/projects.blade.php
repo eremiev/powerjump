@@ -44,13 +44,13 @@
                                     @endforeach
                                 </div>
                                 <div class="blog_post_content text-center">
-                                    <div class="blog_post_title"><a href="#">{{ $project->title }}</a></div>
+                                    <div class="blog_post_title"><a href="{{ route('projects.show', ['id' => $project->id]) }}">{{ $project->title }}</a></div>
                                     {{--<div class="blog_post_author">By Coach <a href="#">James Smith</a></div>--}}
-                                    <div class="blog_post_date"><a href="#">{{ $project->when }}</a></div>
+                                    <div class="blog_post_date"><a href="{{ route('projects.show', ['id' => $project->id]) }}">{{ $project->when }}</a></div>
                                     <div class="blog_post_text">
                                         <p>{{str_limit(strip_tags($project->description),500,'...')}}</p>
                                     </div>
-                                    <div class="button blog_post_button"><a href="#">Прочети повече</a></div>
+                                    <div class="button blog_post_button"><a href="{{ route('projects.show', ['id' => $project->id]) }}">Прочети повече</a></div>
                                 </div>
                             </div>
                         </div>

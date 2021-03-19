@@ -57,7 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="section_title"><h1>Често задавани въпроси</h1></div>
+                    <div class="section_title"><h1>Дейности</h1></div>
                 </div>
             </div>
             <div class="row faq_row">
@@ -67,9 +67,13 @@
                     <div class="faq_item d-flex flex-row align-items-start justify-content-start">
                         <div class="faq_icon d-flex flex-column align-items-center justify-content-center"><div><img src="images/icon_1.svg" alt=""></div></div>
                         <div class="faq_item_content">
-                            <div class="faq_title">Can I change my plan?</div>
+                            <div class="faq_title">Организиране на курсове</div>
                             <div class="faq_text">
-                                <p>Nam quis maximus quam. Phasellus interdum pulvinar tellus non tincidunt. Nunc sit amet aliquet nisl, consequat laoreet sem.</p>
+                                <p>* курсове по: стрелба с лък, boking & free run (скачане с кокили и свободно бягане с акробатика), унисайкъл, кайтсърф, лонгборд, водолазно дело;<br />
+                                    * тренинги:  за сплотяване на колектив, като част от събития, по проект;<br />
+                                    * демонстрации и работилници : кокили (скачащи и статични), стрелба с лък, кайтсърф, бмх, сноуборд, АТВ, стънт, водолазно дело, лонгборд, и др.;<br />
+                                    * екстремни аниматори;<br />
+                                    * консултации</p>
                             </div>
                         </div>
                     </div>
@@ -78,9 +82,9 @@
                     <div class="faq_item d-flex flex-row align-items-start justify-content-start">
                         <div class="faq_icon d-flex flex-column align-items-center justify-content-center"><div><img src="images/icon_3.svg" alt=""></div></div>
                         <div class="faq_item_content">
-                            <div class="faq_title">Can I change my plan?</div>
+                            <div class="faq_title">Огнени дейности</div>
                             <div class="faq_text">
-                                <p> Maecenas sit amet urna nisi. Vestibulum eu feugiat sem, ut ultricies erat. Nam sit amet turpis consequat, cursus leo pretium.</p>
+                                <p>Въртене на пой, огнени демонстрации</p>
                             </div>
                         </div>
                     </div>
@@ -89,20 +93,9 @@
                     <div class="faq_item d-flex flex-row align-items-start justify-content-start">
                         <div class="faq_icon d-flex flex-column align-items-center justify-content-center"><div><img src="images/icon_5.svg" alt=""></div></div>
                         <div class="faq_item_content">
-                            <div class="faq_title">Can I change my plan?</div>
+                            <div class="faq_title">Каскадьорски дейности</div>
                             <div class="faq_text">
-                                <p>Amet urna nisi. Vestibulum eu feugiat sem, ut ultricies erat. Nam sit amet turpis consequat, cursus leo pretium, pulvinar ipsum.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Faq item -->
-                    <div class="faq_item d-flex flex-row align-items-start justify-content-start">
-                        <div class="faq_icon d-flex flex-column align-items-center justify-content-center"><div><img src="images/icon_7.svg" alt=""></div></div>
-                        <div class="faq_item_content">
-                            <div class="faq_title">Can I change my plan?</div>
-                            <div class="faq_text">
-                                <p>Nam quis maximus quam. Phasellus interdum pulvinar tellus non tincidunt. Nunc sit amet aliquet nisl, consequat laoreet sem.</p>
+                                <p>Авто и мото каскади, АТВ, стънт</p>
                             </div>
                         </div>
                     </div>
@@ -114,9 +107,9 @@
                     <div class="faq_item d-flex flex-row align-items-start justify-content-start">
                         <div class="faq_icon d-flex flex-column align-items-center justify-content-center"><div><img src="images/icon_2.svg" alt=""></div></div>
                         <div class="faq_item_content">
-                            <div class="faq_title">Can I change my plan?</div>
+                            <div class="faq_title">Работа с доброволци, възможности за стажове и практики</div>
                             <div class="faq_text">
-                                <p>Nam quis maximus quam. Phasellus interdum pulvinar tellus non tincidunt. Nunc sit amet aliquet nisl, consequat laoreet sem.</p>
+                                <p></p>
                             </div>
                         </div>
                     </div>
@@ -125,9 +118,9 @@
                     <div class="faq_item d-flex flex-row align-items-start justify-content-start">
                         <div class="faq_icon d-flex flex-column align-items-center justify-content-center"><div><img src="images/icon_4.svg" alt=""></div></div>
                         <div class="faq_item_content">
-                            <div class="faq_title">Can I change my plan?</div>
+                            <div class="faq_title">Тиймбилдинг програми</div>
                             <div class="faq_text">
-                                <p> Maecenas sit amet urna nisi. Vestibulum eu feugiat sem, ut ultricies erat. Nam sit amet turpis consequat, cursus leo pretium.</p>
+                                <p>изграждане и сплотяване на екипи, дейности за неформално образование</p>
                             </div>
                         </div>
                     </div>
@@ -136,9 +129,20 @@
                     <div class="faq_item d-flex flex-row align-items-start justify-content-start">
                         <div class="faq_icon d-flex flex-column align-items-center justify-content-center"><div><img src="images/icon_6.svg" alt=""></div></div>
                         <div class="faq_item_content">
-                            <div class="faq_title">Can I change my plan?</div>
+                            <div class="faq_title">Обществено полезни и корпоративни проекти</div>
                             <div class="faq_text">
-                                <p>Amet urna nisi. Vestibulum eu feugiat sem, ut ultricies erat. Nam sit amet turpis consequat, cursus leo pretium, pulvinar ipsum.</p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Faq item -->
+                    <div class="faq_item d-flex flex-row align-items-start justify-content-start">
+                        <div class="faq_icon d-flex flex-column align-items-center justify-content-center"><div><img src="images/icon_7.svg" alt=""></div></div>
+                        <div class="faq_item_content">
+                            <div class="faq_title">Организиране на събития</div>
+                            <div class="faq_text">
+                                <p>Организиране на събития, фестивали, шоу програми, състезания, детски празненства, рожденни дни, др.</p>
                             </div>
                         </div>
                     </div>
@@ -147,9 +151,9 @@
                     <div class="faq_item d-flex flex-row align-items-start justify-content-start">
                         <div class="faq_icon d-flex flex-column align-items-center justify-content-center"><div><img src="images/icon_8.svg" alt=""></div></div>
                         <div class="faq_item_content">
-                            <div class="faq_title">Can I change my plan?</div>
+                            <div class="faq_title">Пълно озвучаване за събития</div>
                             <div class="faq_text">
-                                <p>Nam quis maximus quam. Phasellus interdum pulvinar tellus non tincidunt. Nunc sit amet aliquet nisl, consequat laoreet sem.</p>
+                                <p>професионален озвучител, водещ, DJ, музикални групи по избор</p>
                             </div>
                         </div>
                     </div>

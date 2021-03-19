@@ -1,45 +1,22 @@
 <!-- Header -->
-
-<header class="header">
-    <div class="header_content d-flex flex-row align-items-center justify-content-center">
-
-        <!-- Logo -->
-        <div class="logo top_align">
-            <img src="{{URL::asset('/images/powerjump.png')}}" alt="PowerJump">
-            <a href="{{ url('/') }}">
-            </a>
-        </div>
-        <nav class="main_nav">
-            <ul class="d-flex flex-row align-items-center justify-content-start">
-                <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ url('/') }}">Начало</a></li>
-                <li class="{{ (request()->is('about')) ? 'active' : '' }}"><a href="{{ url('/about') }}">За нас</a></li>
-                <li class="{{ (request()->is('projects')) ? 'active' : '' }}"><a href="{{ url('/projects') }}">Проекти</a></li>
-                <li class="{{ (request()->is('events')) ? 'active' : '' }}"><a href="{{ url('/events') }}">Събития</a></li>
-                <li class="{{ (request()->is('products')) ? 'active' : '' }}"><a href="{{ url('/products') }}">Продукти</a></li>
-                <li class="{{ (request()->is('partners')) ? 'active' : '' }}"><a href="{{ url('/partners') }}">Партньори</a></li>
-            </ul>
+<header id="header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    <a class="navbar-brand" href="./">Power Jump</a> </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav ">
+                        <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a class="nav-link" href="{{ url('/') }}">Начало</a></li>
+                        <li class="{{ (request()->is('about')) ? 'active' : '' }}"><a href="{{ url('/about') }}">За нас</a></li>
+                        <li class="{{ (request()->is('projects')) ? 'active' : '' }}"><a href="{{ url('/projects') }}">Проекти</a></li>
+                        <li class="{{ (request()->is('events')) ? 'active' : '' }}"><a href="{{ url('/events') }}">Събития</a></li>
+                        <li class="{{ (request()->is('products')) ? 'active' : '' }}"><a href="{{ url('/products') }}">Продукти</a></li>
+                        <li class="{{ (request()->is('partners')) ? 'active' : '' }}"><a href="{{ url('/partners') }}">Партньори</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <div class="header_right top_align d-flex flex-row align-items-center justify-content-start">
-            <div class="contact_button trans_400"><a href="{{ url('/contacts') }}">Контакти</a></div>
-            <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
-        </div>
     </div>
 </header>
-
-<!-- Menu -->
-
-<div class="menu">
-    <div class="menu_content d-flex flex-column align-items-center justify-content-start">
-        <nav class="menu_nav">
-            <ul class="d-flex flex-column align-items-center justify-content-start">
-                <li><a href="{{ url('/') }}">Начало</a></li>
-                <li><a href="{{ url('/about') }}">За нас</a></li>
-                <li><a href="{{ url('/projects') }}">Проекти</a></li>
-                <li ><a href="{{ url('/events') }}">Събития</a></li>
-                <li><a href="{{ url('/products') }}">Продукти</a></li>
-                <li><a href="{{ url('/partners') }}">Партньори</a></li>
-                <li><a href="{{ url('/contacts') }}">Контакти</a></li>
-            </ul>
-        </nav>
-    </div>
-</div>

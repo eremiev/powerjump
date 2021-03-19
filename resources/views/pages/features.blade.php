@@ -5,7 +5,7 @@
         <div class="row">
 
             <!-- Feature -->
-            <div class="col-lg-3 icon_box_col">
+            <div class="col-lg-6 icon_box_col">
                 <div class="icon_box text-center d-flex flex-column align-items-center justify-content-start">
                     <div class="icon_box_icon d-flex flex-column align-items-center justify-content-end">
                         <img class="svg" src="{{url('images/medal.svg')}}" alt="https://www.flaticon.com/authors/prettycons">
@@ -18,43 +18,18 @@
             </div>
 
             <!-- Feature -->
-            <div class="col-lg-3 icon_box_col">
+            <div class="col-lg-6 icon_box_col">
                 <div class="icon_box text-center d-flex flex-column align-items-center justify-content-start">
                     <div class="icon_box_icon d-flex flex-column align-items-center justify-content-end">
-                        <img class="svg" src="{{url('images/dumbbell.svg')}}" alt="https://www.flaticon.com/authors/prettycons">
+                        <img class="svg" src="{{url('images/medal.svg')}}" alt="https://www.flaticon.com/authors/prettycons">
                     </div>
-                    <div class="icon_box_title"><h3>Award winning Gym</h3></div>
+                    <div class="icon_box_title"><h3>Цели</h3></div>
                     <div class="icon_box_text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et orci nec leo aliquet eleifend.</p>
+                        <p>Основна цел на Сдружението е чрез атрактивни иновативни спортни и творчески занимания да насочи енергията на младите хора към интересни и трудно достъпни ...</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Feature -->
-            <div class="col-lg-3 icon_box_col">
-                <div class="icon_box text-center d-flex flex-column align-items-center justify-content-start">
-                    <div class="icon_box_icon d-flex flex-column align-items-center justify-content-end">
-                        <img class="svg" src="{{url('images/water.svg')}}" alt="https://www.flaticon.com/authors/prettycons">
-                    </div>
-                    <div class="icon_box_title"><h3>Award winning Gym</h3></div>
-                    <div class="icon_box_text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et orci nec leo aliquet eleifend.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Feature -->
-            <div class="col-lg-3 icon_box_col">
-                <div class="icon_box text-center d-flex flex-column align-items-center justify-content-start">
-                    <div class="icon_box_icon d-flex flex-column align-items-center justify-content-end">
-                        <img class="svg" src="{{url('images/weightlifting.svg')}}" alt="https://www.flaticon.com/authors/prettycons">
-                    </div>
-                    <div class="icon_box_title"><h3>Award winning Gym</h3></div>
-                    <div class="icon_box_text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et orci nec leo aliquet eleifend.</p>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>

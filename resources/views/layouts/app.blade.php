@@ -4,49 +4,50 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Crossfit template project">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.2.1/bootstrap.min.css">
-    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/font.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/structure.css') }}" rel="stylesheet">
+
+
+    <title>{{ config('app.name', 'Power Jump') }}</title>
+    <meta name="description" content="Power Jump">
 
     @yield('style')
 
 
-    {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
 
-    <title>{{ config('app.name', 'Power Jump') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <!-- Scripts -->
-    {{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
 
 </head>
 <body>
 
-<div class="super_container">
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+
     @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
         @include('pages.nav')
     @endif
-    @yield('content')
+
+        @yield('content')
+
     @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
         @include('pages.footer')
     @endif
 
-</div>
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="styles/bootstrap-4.2.1/popper.js"></script>
-<script src="styles/bootstrap-4.2.1/bootstrap.min.js"></script>
-<script src="plugins/greensock/TweenMax.min.js"></script>
-<script src="plugins/greensock/TimelineMax.min.js"></script>
-<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="plugins/greensock/animation.gsap.min.js"></script>
-<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="plugins/progressbar/progressbar.min.js"></script>
-<script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="js/custom.js"></script>
+<!-- JavaScript -->
+<script src="{{ asset('assets/js/jquery.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/wow.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/custom.js') }}" defer></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v10.0" nonce="hMzWyV2q"></script>
 </body>
 </html>
 
