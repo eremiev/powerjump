@@ -15,8 +15,9 @@ use App\Http\Controllers\PageController;
 
 
 Route::get('/', 'PageController@home');
-Route::get('/about', 'PageController@about');
-Route::get('/projects', 'PageController@projects');
+//Route::get('/about', 'PageController@about');
+Route::get('/experiences', 'PageController@experiences');
+Route::get('/experiences/{category}', 'PageController@experience');
 Route::get('/events', 'PageController@events');
 Route::get('/products', 'PageController@products');
 Route::get('/partners', 'PageController@partners');

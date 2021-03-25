@@ -13,6 +13,19 @@
         <input type="text" class="form-control" name="title" id="title" value="{{$project->title}}">
     </div>
 
+
+    <div class="form-group">
+        <label for="category">Категория</label>
+        {{ Form::select('category', [
+        'physical_activity' => 'ФИЗИЧЕСКА АКТИВНОСТ',
+        'culture_entertainment' => 'КУЛТУРА И ЗАБАВЛЕНИЯ',
+        'social_projects' => 'СОЦИАЛНИ ПРОЕКТИ',
+        'business_partnerships' => 'БИЗНЕС ПАРТНЬОРСТВА',
+        ], $project->category, [ 'placeholder' =>'Избери', 'class' => 'form-control']) }}
+
+    </div>
+
+
     <div class="form-group">
         <label for="description">Описание</label>
         <textarea id="description" name="description">{{$project->description}}</textarea>

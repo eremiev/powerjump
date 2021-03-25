@@ -11,57 +11,61 @@
     <title>{{ config('app.name', 'Power Jump') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Power Jump') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.projects.index') }}">Проекти</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.events.index') }}">Събития</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.partners.index') }}">Партньори</a>
-                        </li>
-                    </ul>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    @auth
+                        <ul class="nav navbar-nav">
+                            <li class="{{ (request()->is('admin/projects/*')) ? 'active' : '' }}">
+                                <a href="{{ route('admin.projects.index') }}">Опит</a>
+                            </li>
+                            <li class="{{ (request()->is('admin/events/*')) ? 'active' : '' }}">
+                                <a href="{{ route('admin.events.index') }}">Събития</a>
+                            </li>
+                            <li class="{{ (request()->is('admin/partners/*')) ? 'active' : '' }}">
+                                <a href="{{ route('admin.partners.index') }}">Партньори</a>
+                            </li>
+                        </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                    @endauth
+
+                    <ul class="nav navbar-nav navbar-right">
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
+                            <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                            <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class="dropdown">
+                                <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -82,7 +86,6 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>

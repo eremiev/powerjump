@@ -14,7 +14,8 @@ class Project extends Model
     protected $fillable = [
         'title',
         'description',
-        'when'
+        'when',
+        'category'
     ];
 
     public function images()

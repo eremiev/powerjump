@@ -1,22 +1,52 @@
-<!-- Header -->
-<header id="header">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                    <a class="navbar-brand" href="./">Power Jump</a> </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav ">
-                        <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a class="nav-link" href="{{ url('/') }}">Начало</a></li>
-                        <li class="{{ (request()->is('about')) ? 'active' : '' }}"><a href="{{ url('/about') }}">За нас</a></li>
-                        <li class="{{ (request()->is('projects')) ? 'active' : '' }}"><a href="{{ url('/projects') }}">Проекти</a></li>
-                        <li class="{{ (request()->is('events')) ? 'active' : '' }}"><a href="{{ url('/events') }}">Събития</a></li>
-                        <li class="{{ (request()->is('products')) ? 'active' : '' }}"><a href="{{ url('/products') }}">Продукти</a></li>
-                        <li class="{{ (request()->is('partners')) ? 'active' : '' }}"><a href="{{ url('/partners') }}">Партньори</a></li>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">Power Jump</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ url('/') }}">Начало</a></li>
+                <li class="dropdown {{ (request()->is('experiences')) || (request()->is('experiences/*')) ? 'active' : '' }}">
+                    <a href="{{ url('/experiences') }}" role="button" aria-expanded="false">Опит<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ url('experiences/physical_activity') }}">Физическа активност</a></li>
+                        <li><a href="{{ url('experiences/culture_entertainment') }}">Култура и забавления</a></li>
+                        <li><a href="{{ url('experiences/social_projects') }}">Социални проекти</a></li>
+                        <li><a href="{{ url('experiences/business_partnerships') }}">Бизнес парньорства</a></li>
                     </ul>
-                </div>
-            </div>
-        </nav>
+                </li>
+                <li class="dropdown {{ (request()->is('movement/*')) ? 'active' : '' }}">
+                    <a href="{{ url('/movement') }}" role="button" aria-expanded="false">Движения<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ url('/') }}">Скачане с кокили #Boching</a></li>
+                        <li><a href="{{ url('/') }}">Стрелба с лък</a></li>
+                        <li><a href="{{ url('/') }}">Байк</a></li>
+                        <li><a href="{{ url('/') }}">АТВ</a></li>
+                        <li><a href="{{ url('/') }}">Сафари Джип</a></li>
+                        <li><a href="{{ url('/') }}">Други</a></li>
+                    </ul>
+                </li>
+                <li class="{{ (request()->is('products/*')) ? 'active' : '' }}"><a href="{{ url('/products') }}">Пазарувай Продукти</a></li>
+                <li class="dropdown">
+                    <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">За нас<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ url('/') }}">Кои сме ние?</a></li>
+                        <li><a href="{{ url('/') }}">Експертиза Екип</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{ url('/') }}">Отчети</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
     </div>
-</header>
+</nav>

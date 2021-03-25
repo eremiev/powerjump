@@ -21,11 +21,27 @@ class PageController extends Controller
         return view('pages.about');
     }
 
-    public function projects(){
+    public function experiences(){
 
         $projects = Project::with('images')->OrderBy('when', 'desc')->paginate(5);
 
-        return view('pages.projects', compact('projects'));
+        return view('pages.experiences');
+    }
+
+    public function experience($category){
+
+        $categories = [
+            'physical_activity' => 'ФИЗИЧЕСКА АКТИВНОСТ',
+            'culture_entertainment' => 'КУЛТУРА И ЗАБАВЛЕНИЯ',
+            'social_projects' => 'СОЦИАЛНИ ПРОЕКТИ',
+            'business_partnerships' => 'БИЗНЕС ПАРТНЬОРСТВА',
+        ];
+        $projects = Project::with('images')->where('category', $category)->OrderBy('when', 'desc')->paginate(5);
+
+        $selectedCategory = $categories[$category];
+
+        return view('pages.projects', compact(['projects', 'selectedCategory']));
+
     }
 
     public function events(){

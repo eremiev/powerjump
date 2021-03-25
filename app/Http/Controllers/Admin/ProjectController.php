@@ -40,7 +40,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = $request->only(['title', 'description', 'when', 'image']);
+        $inputs = $request->only(['title', 'description', 'when', 'image', 'category']);
         (new Store())->run($inputs);
 
         return redirect()->route('admin.projects.index');
@@ -68,7 +68,7 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inputs = $request->only(['title', 'description', 'when', 'image']);
+        $inputs = $request->only(['title', 'description', 'when', 'image', 'category']);
         (new Update())->run($id, $inputs);
 
         return redirect()->route('admin.projects.index');

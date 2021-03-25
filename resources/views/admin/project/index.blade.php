@@ -4,7 +4,7 @@
     Проекти
 @endsection
 @section('container')
-    <a href="{{ URL::route('admin.projects.create') }}" class="btn btn-default">Добави нов проект</a>
+    <a href="{{ URL::route('admin.projects.create') }}" class="btn btn-default">Добави нов опит</a>
     <table class="table">
         <thead>
         <tr>
@@ -12,6 +12,7 @@
             <th scope="col">Заглавие</th>
             <th scope="col">Описание</th>
             <th scope="col">Дата</th>
+            <th scope="col">Категория</th>
             <th scope="col">Действие</th>
         </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <td>{{$project->title}}</td>
                 <td>{{ str_limit($project->description, $limit = 100, $end = '...')}}</td>
                 <td>{{$project->when}}</td>
+                <td>{{$project->category}}</td>
                 <td class="small">
                     <div class="row">
                         <div class="col-lg-6">

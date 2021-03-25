@@ -6,7 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://bootswatch.com/3/cerulean/bootstrap.min.css">
+
+    {{--<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">--}}
     <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/font.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet">
@@ -15,10 +21,6 @@
 
     <title>{{ config('app.name', 'Power Jump') }}</title>
     <meta name="description" content="Power Jump">
-
-    @yield('style')
-
-
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -33,9 +35,9 @@
     @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
         @include('pages.nav')
     @endif
-
+    <div style="margin-top: 50px;">
         @yield('content')
-
+    </div>
     @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
         @include('pages.footer')
     @endif

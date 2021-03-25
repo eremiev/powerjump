@@ -24,10 +24,11 @@ class Update
         $project->update([
             'title' => $inputs['title'],
             'description' => $inputs['description'],
+            'category' => $inputs['category'],
             'when' => Carbon::parse($inputs['when'])
         ]);
 
-        if ($inputs['image']) {
+        if (!empty($inputs['image'])) {
             try {
                 $filePath = $this->UserImageUpload($inputs['image']); //Passing $data->image as parameter to our created method
                 if (count($project->images()->get()) > 0)
