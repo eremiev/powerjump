@@ -15,8 +15,16 @@ use App\Http\Controllers\PageController;
 
 
 Route::get('/', 'PageController@home');
-//Route::get('/about', 'PageController@about');
+Route::get('/about_us', 'PageController@about');
+Route::get('/team', 'PageController@team');
 Route::get('/experiences', 'PageController@experiences');
+Route::get('/movements', 'PageController@movements');
+Route::get('/movements/jumping_stilts', 'PageController@jumpingStilts');
+Route::get('/movements/archery', 'PageController@archery');
+Route::get('/movements/bike', 'PageController@bike');
+Route::get('/movements/atv', 'PageController@atv');
+Route::get('/movements/safari', 'PageController@safari');
+Route::get('/movements/other', 'PageController@other');
 Route::get('/experiences/{category}', 'PageController@experience');
 Route::get('/events', 'PageController@events');
 Route::get('/products', 'PageController@products');

@@ -1,30 +1,6 @@
 @extends('layouts.app')
 
-@section('style')
-    <link rel="stylesheet" type="text/css" href="styles/contact.css">
-    <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
-@endsection
-
 @section('content')
-
-    <!-- Home -->
-
-    <div class="home">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/contact.jpg" data-speed="0.8"></div>
-        <div class="home_container">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="home_content text-center">
-                            <div class="home_title">Contact</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact -->
 
     <div class="contact">
         <div class="container">
@@ -33,31 +9,66 @@
                 <!-- Contact Content -->
                 <div class="col-lg-6 contact_col">
                     <div class="contact_content">
-                        <div class="contact_content_title">crossfit <span>x</span></div>
-                        <div class="contact_text">
-                            <p>Pellentesque commodo finibus molestie. Aenean pulvinar condimentum consectetur. Aenean pulvinar condimentum consectetur. Sed sed arcu a elit egestas imperdiet nec ac sapien. Nunc ac fringilla sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam quis maximus quam. Phasellus interdum pulvinar tellus non tincidunt.</p>
-                        </div>
                         <div class="contact_info">
-                            <div class="contact_title"><h1>Information</h1></div>
+                            <div class="contact_title"><h1>Информация</h1></div>
                             <ul>
-                                <li>Main Str, no 23, New York</li>
-                                <li>+546 990221 123</li>
-                                <li>hosting@contact.com</li>
+                                <li><h3>СДРУЖЕНИЕ „ПАУЪР ДЖЪМП”</h3></li>
+                                <li><b>ЕИК:</b> 175816901</li>
+                                <li><b>МОЛ:</b> Мирослав Тодоров</li>
+                                <li><b>Адрес регистрация:</b> България, гр.Варна, ул. „Д-р Басанович”-25, ет.4</li>
+                                <li><b>Адрес за кореспонденция:</b> бул. „8-ми Приморски полк“Варна ет.7 ап.26</li>
+                                <li><b>Тел:</b> <a href="tel:+359888988828">+359 888 988 828</a></li>
+                                <li><b>Е-майл:</b> <a href="mailto:ngopowerjump@gmail.com">ngopowerjump@gmail.com</a></li>
                             </ul>
+                        </div>
+                        <div style="margin-top: 10px; margin-bottom: 20px;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.5109790407046!2d27.895520915483644!3d43.21974527913849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a4547d26ef9ec7%3A0xc56da69a2c295ded!2sClub%20%22Power%20Jump%22!5e0!3m2!1sen!2sus!4v1616875985294!5m2!1sen!2sus" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
                 <div class="col-lg-6 contact_col">
-                    <div class="contact_form_container">
-                        <div class="contact_title"><h1>Get in touch</h1></div>
-                        <form action="#" class="contact_form" id="contact_form">
-                            <input type="text" class="contact_form_input" placeholder="Name" required="required">
-                            <input type="email" class="contact_form_input" placeholder="E-mail" required="required">
-                            <input type="text" class="contact_form_input" placeholder="Subject">
-                            <textarea class="contact_form_input contact_form_textarea" placeholder="Message" required="required"></textarea>
-                            <button class="contact_form_button button"><span>Send</span></button>
+                    <h1>Контакти</h1>
+                    <div class="well bs-component">
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="name" class="col-lg-2 control-label">Име</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Име">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone" class="col-lg-2 control-label">Телефон</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Телефон">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email" class="col-lg-2 control-label">Е-майл</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="Е-майл">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="description" class="col-lg-2 control-label">Запитване</label>
+                                    <div class="col-lg-10">
+                                        <textarea class="form-control" rows="3" id="description"></textarea>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2 text-right">
+                                        <button type="submit" class="btn btn-primary">Изпрати</button>
+                                    </div>
+                                </div>
+                            </fieldset>
                         </form>
                     </div>
                 </div>
@@ -65,20 +76,5 @@
         </div>
     </div>
 
-    <!-- Google Map -->
-
-    <div class="contact_map_container">
-        <div class="map">
-            <div id="google_map" class="google_map">
-                <div class="map_container">
-                    <div id="map">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
 @endsection
 

@@ -12,7 +12,7 @@ class PageController extends Controller
 
     public function home(){
         $projects = Project::with('images')->OrderBy('when', 'desc')->paginate(5);
-        $events = Event::with('images')->OrderBy('when', 'desc')->paginate(3);
+        $events = Event::with('images')->OrderBy('when', 'desc')->paginate(5);
 
         return view('pages.home', compact(['projects', 'events']));
     }
@@ -21,11 +21,42 @@ class PageController extends Controller
         return view('pages.about');
     }
 
-    public function experiences(){
+    public function team(){
+        return view('pages.team');
+    }
 
+    public function experiences(){
         $projects = Project::with('images')->OrderBy('when', 'desc')->paginate(5);
 
         return view('pages.experiences');
+    }
+
+    public function movements(){
+        return view('pages.movements');
+    }
+
+    public function jumpingStilts(){
+        return view('pages.jumping_stilts');
+    }
+
+    public function archery(){
+        return view('pages.archery');
+    }
+
+    public function bike(){
+        return view('pages.bike');
+    }
+
+    public function atv(){
+        return view('pages.atv');
+    }
+
+    public function safari(){
+        return view('pages.safari');
+    }
+
+    public function other(){
+        return view('pages.other');
     }
 
     public function experience($category){

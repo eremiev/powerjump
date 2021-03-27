@@ -50,38 +50,12 @@
                         {{ $events->links('pagination.default') }}
 
                 </div>
-                <div class="col-sm-6 col-md-2 col-lg-2">
+
+                <div class="col-sm-6 col-md-4 col-lg-6">
                     <div class="row">
-                        <div class="middlebar_content">
-                            <h2 class="yellow_bg">Актуално</h2>
-                            <div class="middlebar_content_inner wow fadeInUp">
-                                <ul class="middlebar_nav">
-                                    <li> <a class="mbar_thubnail" href="#"><img src="images/hot_img1.jpg" alt=""></a> <a class="mbar_title" href="#">Курс Стрелба с лък</a> </li>
-                                    <li> <a class="mbar_thubnail" href="#"><img src="images/hot_img2.jpg" alt=""></a> <a class="mbar_title" href="#">АТВ обиколка</a> </li>
-                                    <li> <a class="mbar_thubnail" href="#"><img src="images/hot_img1.jpg" alt=""></a> <a class="mbar_title" href="#">Sed luctus semper odio aliquam rhoncus</a> </li>
-                                    <li> <a class="mbar_thubnail" href="#"><img src="images/hot_img1.jpg" alt=""></a> <a class="mbar_title" href="#">Sed luctus semper odio aliquam rhoncus</a> </li>
-                                </ul>
-                            </div>
-                            <div class="popular_categori  wow fadeInUp">
-                                <h2 class="limeblue_bg">Дейности</h2>
-                                <ul class="poplr_catgnva">
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Gallery</a></li>
-                                    <li><a href="#">Life &amp; Style</a></li>
-                                    <li><a href="#">Games</a></li>
-                                    <li><a href="#">Slider</a></li>
-                                    <li><a href="#">Sports</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-4">
-                    <div class="row">
-                        <div class="rightbar_content">
+                        <div class="">
                             <div class="single_blog_sidebar wow fadeInUp">
-                                <h2>Последни Фейсбук публикаций</h2>
-                                <div class="fb-page" data-href="https://www.facebook.com/PowerJumpClubBulgaria/" data-tabs="timeline" data-width="366" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/PowerJumpClubBulgaria/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/PowerJumpClubBulgaria/">Power Jump</a></blockquote></div>
+                                <div class="fb-page" data-href="https://www.facebook.com/PowerJumpClubBulgaria/" data-tabs="timeline" data-width="600" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/PowerJumpClubBulgaria/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/PowerJumpClubBulgaria/">Power Jump</a></blockquote></div>
 
 
                             </div>
@@ -105,6 +79,22 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-sm-6 col-md-2 col-lg-6">
+                    {{--<div class="row">--}}
+                        {{--<div class="">--}}
+                            {{--<h2 class="">Актуално</h2>--}}
+                            {{--<div class=" fadeInUp">--}}
+
+                            {{--</div>--}}
+                            {{--<div class=" fadeInUp">--}}
+                                {{--<h2 class="limeblue_bg">Дейности</h2>--}}
+
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                </div>
+
             </div>
         </div>
     </section>

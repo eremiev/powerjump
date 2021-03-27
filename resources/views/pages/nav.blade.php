@@ -22,23 +22,24 @@
                         <li><a href="{{ url('experiences/business_partnerships') }}">Бизнес парньорства</a></li>
                     </ul>
                 </li>
-                <li class="dropdown {{ (request()->is('movement/*')) ? 'active' : '' }}">
-                    <a href="{{ url('/movement') }}" role="button" aria-expanded="false">Движения<span class="caret"></span></a>
+                <li class="dropdown {{ (request()->is('movements/*')) ? 'active' : '' }}">
+                    <a href="{{ url('/movements') }}" role="button" aria-expanded="false">Движения<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ url('/') }}">Скачане с кокили #Boching</a></li>
-                        <li><a href="{{ url('/') }}">Стрелба с лък</a></li>
-                        <li><a href="{{ url('/') }}">Байк</a></li>
-                        <li><a href="{{ url('/') }}">АТВ</a></li>
-                        <li><a href="{{ url('/') }}">Сафари Джип</a></li>
-                        <li><a href="{{ url('/') }}">Други</a></li>
+                        <li><a href="{{ url('/movements/jumping_stilts') }}">Скачане с кокили #Boching</a></li>
+                        <li><a href="{{ url('/movements/archery') }}">Стрелба с лък</a></li>
+                        <li><a href="{{ url('/movements/bike') }}">Байк</a></li>
+                        <li><a href="{{ url('/movements/atv') }}">АТВ</a></li>
+                        <li><a href="{{ url('/movements/safari') }}">Сафари Джип</a></li>
+                        <li><a href="{{ url('/movements/other') }}">Други</a></li>
                     </ul>
                 </li>
-                <li class="{{ (request()->is('products/*')) ? 'active' : '' }}"><a href="{{ url('/products') }}">Пазарувай Продукти</a></li>
+                {{--<li class="{{ (request()->is('products/*')) ? 'active' : '' }}"><a href="{{ url('/products') }}">Пазарувай Продукти</a></li>--}}
                 <li class="dropdown">
                     <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">За нас<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ url('/') }}">Кои сме ние?</a></li>
-                        <li><a href="{{ url('/') }}">Експертиза Екип</a></li>
+                        <li><a href="{{ url('/about_us') }}">Кои сме ние?</a></li>
+                        <li><a href="{{ url('/team') }}">Експертиза Екип</a></li>
+                        <li><a href="{{ url('/contacts') }}">Контакти</a></li>
                         <li class="divider"></li>
                         <li><a href="{{ url('/') }}">Отчети</a></li>
                     </ul>
