@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('style')
+@section('title')
+PowerJump - {{ $selectedCategory }}
 @endsection
 
 @section('content')
@@ -11,8 +12,8 @@
             </div>
         </div>
 
-            @foreach($projects as $project)
-        <div class="row text-center">
+        @foreach($projects as $project)
+            <div class="row text-center">
 
                 <div class="col-lg-2">
                 </div>
@@ -28,21 +29,25 @@
                                     @break
                                 @endforeach
                                 <p>{!! str_limit(strip_tags($project->description),500,'...') !!}</p>
-                                {{--<p>{!! $project->description !!}</p>--}}
 
                             </div>
-                            <div class="panel-footer">Дата на събитието: {{ \Carbon\Carbon::parse($project->when )->format('d-m-Y') }}</div>
+                            <div class="panel-footer">Дата на
+                                събитието: {{ \Carbon\Carbon::parse($project->when )->format('d-m-Y') }}</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2">
                 </div>
-        </div>
-            @endforeach
+            </div>
+        @endforeach
 
+        @if ($projects->hasPages())
+            <div class="row text-center">
+                {{ $projects->links('pagination.default') }}
+            </div>
+        @endif
     </div>
 
-    {{ $projects->links('pagination.default') }}
 
 @endsection
 

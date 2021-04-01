@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    PowerJump - Други
+@endsection
+
 @section('content')
 
     <div class="container">
@@ -11,8 +15,7 @@
 
         <div class="bs-component">
             <div class="jumbotron">
-                <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
-                    content or information.</p>
+                <p></p>
             </div>
         </div>
 

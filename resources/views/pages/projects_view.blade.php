@@ -1,41 +1,57 @@
 @extends('layouts.app')
 
-@section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('styles/blog.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('styles/blog_responsive.css') }}">
+
+@section('title')
+    PowerJump - {{ $project->title }}
+@endsection
+
+@section('facebook')
+    <!-- Facebook -->
+    <meta property="og:title" content="club Power Jump - {{ $project->title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://powerjump.info"/>
+    <meta property="og:site_name" content="Power Jump"/>
+    <meta property="og:description" content="{!! str_limit(strip_tags($project->description),500,'...') !!}"/>
+    <meta property="og:locale" content="bg_BG"/>
+    <meta property="fb:admins" content="1549776988"/>
+    <!-- END Facebook -->
 @endsection
 
 @section('content')
-    <!-- Blog -->
 
-    <div class="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Опит > {{ $project->title }}</h2>
+            </div>
+        </div>
 
-            <div class="blog_post blog_post_light">
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="blog_post_container">
-                                <div class="blog_post_image text-center">
-                                    @foreach($project->images as $image)
-                                        <img src="{{ asset($image->url) }}" style="height: 250px;" alt=""/>
-                                        @break
-                                    @endforeach
-                                </div>
-                                <div class="blog_post_content text-center">
-                                    <div class="blog_post_title">{{ $project->title }}</div>
-                                    {{--<div class="blog_post_author">By Coach <a href="#">James Smith</a></div>--}}
-                                    <div class="blog_post_date">{{ $project->when }}</div>
-                                    <div class="blog_post_text">
-                                        <p>{!!  $project->description !!}</p>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="row text-center">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="bs-component">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{ $project->title }}</h3>
                         </div>
+                        <div class="panel-body">
+                            @foreach($project->images as $image)
+                                <img src="{{ asset($image->url) }}" style="height: 250px;" alt="{{ $project->title }}"/>
+                                @break
+                            @endforeach
+                            <p>{!! $project->description !!}</p>
+
+                        </div>
+                        <div class="panel-footer">Дата на
+                            събитието: {{ \Carbon\Carbon::parse($project->when )->format('d-m-Y') }}</div>
                     </div>
                 </div>
             </div>
-
+            <div class="col-lg-2">
+            </div>
+        </div>
     </div>
 @endsection
+
+
 

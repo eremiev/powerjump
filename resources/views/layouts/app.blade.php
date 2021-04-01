@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://bootswatch.com/3/cerulean/bootstrap.min.css">
+    {{--<link rel="stylesheet" href="https://bootswatch.com/3/cerulean/bootstrap.min.css">--}}
 
     {{--<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">--}}
     <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
@@ -19,8 +19,32 @@
     <link href="{{ asset('assets/css/structure.css') }}" rel="stylesheet">
 
 
-    <title>{{ config('app.name', 'Power Jump') }}</title>
+
     <meta name="description" content="Power Jump">
+
+    @if (trim($__env->yieldContent('title')))
+        <title>@yield('title')</title>
+    @else
+        <title>{{ config('app.name', 'Power Jump') }}</title>
+    @endif
+
+
+    @if (trim($__env->yieldContent('facebook')))
+        @yield('facebook')
+    @else
+    <!-- Facebook -->
+        <meta property="og:title" content="club Power Jump - Extrem & Art"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="http://powerjump.info"/>
+        <meta property="og:image" content="http://powerjump.info/images/img1.jpg"/>
+        <meta property="og:site_name" content="Power Jump"/>
+        <meta property="og:description" content="НПО “Power Jump”, Сдружение в обществена полза, с цел да обединява и активизира спортно - екстремно ориентирани хора, както и хора, желаещи да се развиват в сферата на атрактивните изкуства, атракционните и физическата активност."/>
+        <meta property="og:locale" content="bg_BG"/>
+        <meta property="fb:admins" content="1549776988"/>
+        <!-- END Facebook -->
+    @endif
+
+
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -52,32 +76,3 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v10.0" nonce="hMzWyV2q"></script>
 </body>
 </html>
-
-
-<!-- Authentication Links -->
-{{--@guest--}}
-{{--<li class="nav-item">--}}
-{{--<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>--}}
-{{--</li>--}}
-{{--<li class="nav-item">--}}
-{{--<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
-{{--</li>--}}
-{{--@else--}}
-{{--<li class="nav-item dropdown">--}}
-{{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
-{{--{{ Auth::user()->name }} <span class="caret"></span>--}}
-{{--</a>--}}
-
-{{--<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">--}}
-{{--<a class="dropdown-item" href="{{ route('logout') }}"--}}
-{{--onclick="event.preventDefault();--}}
-{{--document.getElementById('logout-form').submit();">--}}
-{{--{{ __('Logout') }}--}}
-{{--</a>--}}
-
-{{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
-{{--@csrf--}}
-{{--</form>--}}
-{{--</div>--}}
-{{--</li>--}}
-{{--@endguest--}}

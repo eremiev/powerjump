@@ -35,7 +35,7 @@ Route::get('/contacts', 'PageController@contacts');
 Auth::routes();
 
 
-Route::get('/projects/{id}', [PageController::class, 'showProjects'])->name('projects.show');
+Route::get('/experience/{id}', [PageController::class, 'showExperience'])->name('experience.show');
 
 Route::get('/events/{id}', [PageController::class, 'showEvents'])->name('events.show');
 
