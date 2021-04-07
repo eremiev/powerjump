@@ -18,7 +18,8 @@
     <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/structure.css') }}" rel="stylesheet">
 
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600&display=swap" rel="stylesheet">
 
     <meta name="description" content="Power Jump">
 
@@ -45,11 +46,10 @@
     @endif
 
 
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
-<body>
+<body style="font-family: 'Alegreya', serif; font-size: 16px">
 
 <div id="preloader">
     <div id="status">&nbsp;</div>

@@ -54,7 +54,7 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $project = Project::find($id);
+        $project = Project::with('images')->find($id);
 
         return view('admin.project.edit', compact('project'));
     }

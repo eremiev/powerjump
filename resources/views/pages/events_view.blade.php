@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Събитие > {{ $event->title }}</h2>
+                <h2>Събития > {{ $event->title }}</h2>
             </div>
         </div>
 

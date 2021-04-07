@@ -22,20 +22,20 @@
                                         </a>
                                     </div>
                                     <div class="single_stuff_article">
-                                        <div class="single_sarticle_inner"> <a class="stuff_category" href="#">Проект</a>
-                                            <div class="stuff_article_inner"> <span class="stuff_date">{{\Carbon\Carbon::parse( $event->when)->format('M')}} <strong>{{\Carbon\Carbon::parse( $event->when)->format('d')}}  <span style="font-size: 11px;">{{\Carbon\Carbon::parse( $event->when)->format('Y')}}</span></strong></span>
+                                        <div class="single_sarticle_inner">
+                                            <div class="stuff_article_inner"> <span class="stuff_date"><strong>{{\Carbon\Carbon::parse( $event->when)->format('d')}} {{\Carbon\Carbon::parse( $event->when)->format('M')}} <span>{{\Carbon\Carbon::parse( $event->when)->format('Y')}}</span></strong></span>
                                                 <h2><a href="{{ route('events.show', ['id' => $event->id]) }}">{{ $event->title }}</a></h2>
-                                                <p>{!! str_limit(strip_tags($event->description),500,'...') !!}</p>
+                                                <p>{!! str_limit(strip_tags($event->description),215,'...') !!}</p>
                                             </div>
                                         </div>
 
                                         <div class="social_area wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
                                             <ul>
                                                 <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ route('events.show', ['id' => $event->id]) }}&amp;src=sdkpreparse"><span class="fa fa-facebook"></span></a></li>
-                                                {{--<li><a href="#"><span class="fa fa-twitter"></span></a></li>--}}
-                                                {{--<li><a href="#"><span class="fa fa-google-plus"></span></a></li>--}}
-                                                {{--<li><a href="#"><span class="fa fa-linkedin"></span></a></li>--}}
-                                                {{--<li><a href="#"><span class="fa fa-pinterest"></span></a></li>--}}
+                                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-pinterest"></span></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -63,14 +63,14 @@
                                     </ul>
                                 </div>
                                 <div class="popular_categori  wow fadeInUp">
-                                    <h2 class="limeblue_bg">Движения</h2>
+                                    <h2 class="limeblue_bg">Спорт</h2>
                                     <ul class="poplr_catgnva">
-                                        <li><a href="{{ url('/movements/jumping_stilts') }}">Скачане с кокили #Boching</a></li>
-                                        <li><a href="{{ url('/movements/archery') }}">Стрелба с лък</a></li>
-                                        <li><a href="{{ url('/movements/bike') }}">Байк</a></li>
-                                        <li><a href="{{ url('/movements/atv') }}">АТВ</a></li>
-                                        <li><a href="{{ url('/movements/safari') }}">Сафари Джип</a></li>
-                                        <li><a href="{{ url('/movements/other') }}">Други</a></li>
+                                        <li><a href="{{ url('/sports/jumping_stilts') }}">Скачане с кокили #Boching</a></li>
+                                        <li><a href="{{ url('/sports/archery') }}">Стрелба с лък</a></li>
+                                        <li><a href="{{ url('/sports/bike') }}">Байк</a></li>
+                                        <li><a href="{{ url('/sports/atv') }}">АТВ</a></li>
+                                        <li><a href="{{ url('/sports/safari') }}">Сафари Джип</a></li>
+                                        <li><a href="{{ url('/sports/other') }}">Други</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -84,16 +84,16 @@
                                         <div class="fb-page" data-href="https://www.facebook.com/PowerJumpClubBulgaria/" data-tabs="timeline" data-width="366" data-height="1000px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/PowerJumpClubBulgaria/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/PowerJumpClubBulgaria/">Power Jump</a></blockquote></div>
                                     </div>
                                     <div class="single_blog_sidebar wow fadeInUp" style="margin-top: 30px;">
-                                        <h2>Проекти</h2>
+                                        <h2>Дейности</h2>
                                         <ul class="featured_nav">
                                             @foreach($projects as $project)
-                                                <li> <a class="featured_img" href="{{ route('experience.show', ['id' => $project->id]) }}">
+                                                <li> <a class="featured_img" href="{{ route('activity.show', ['id' => $project->id]) }}">
                                                         @foreach($project->images as $image)
                                                             <img src="{{$image->url}}" alt="">
                                                             @break
                                                         @endforeach
                                                     </a>
-                                                    <div class="featured_title text-center"> <a class="" href="{{ route('experience.show', ['id' => $project->id]) }}">{{ $project->title }}</a> </div>
+                                                    <div class="featured_title text-center"> <a class="" href="{{ route('activity.show', ['id' => $project->id]) }}">{{ $project->title }}</a> </div>
                                                 </li>
                                             @endforeach
 

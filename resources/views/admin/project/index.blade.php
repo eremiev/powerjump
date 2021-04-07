@@ -1,10 +1,10 @@
 @extends('admin.home')
 
 @section('header')
-    Проекти
+    Дейности
 @endsection
 @section('container')
-    <a href="{{ URL::route('admin.projects.create') }}" class="btn btn-default">Добави нов опит</a>
+    <a href="{{ URL::route('admin.projects.create') }}" class="btn btn-default">Добави нова дейност</a>
     <table class="table">
         <thead>
         <tr>

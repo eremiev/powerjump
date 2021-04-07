@@ -1,7 +1,7 @@
 @extends('admin.home')
 
 @section('header')
-    Проекти -> Промяна на проект
+    Дейности -> Промяна на дейност
 @endsection
 @section('container')
     {!! Form::open(['route' => ['admin.projects.update', $project->id],
@@ -35,6 +35,14 @@
     <div class="form-group">
         <label for="when">Дата</label>
         <input id="when" type="date" name="when" min="2000-01-01" class="form-control" value="{{$project->when}}">
+    </div>
+
+
+    <div class="form-group">
+        @foreach($project->images as $image)
+            <img src="{{ asset($image->url) }}" style="height: 250px;" alt="{{ $project->title }}"/>
+            @break
+        @endforeach
     </div>
 
     <div class="form-group">

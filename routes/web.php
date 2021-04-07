@@ -17,15 +17,15 @@ use App\Http\Controllers\PageController;
 Route::get('/', 'PageController@home');
 Route::get('/about_us', 'PageController@about');
 Route::get('/team', 'PageController@team');
-Route::get('/experiences', 'PageController@experiences');
-Route::get('/movements', 'PageController@movements');
-Route::get('/movements/jumping_stilts', 'PageController@jumpingStilts');
-Route::get('/movements/archery', 'PageController@archery');
-Route::get('/movements/bike', 'PageController@bike');
-Route::get('/movements/atv', 'PageController@atv');
-Route::get('/movements/safari', 'PageController@safari');
-Route::get('/movements/other', 'PageController@other');
-Route::get('/experiences/{category}', 'PageController@experience');
+Route::get('/activities', 'PageController@activities');
+Route::get('/sports', 'PageController@sports');
+Route::get('/sports/jumping_stilts', 'PageController@jumpingStilts');
+Route::get('/sports/archery', 'PageController@archery');
+Route::get('/sports/bike', 'PageController@bike');
+Route::get('/sports/atv', 'PageController@atv');
+Route::get('/sports/safari', 'PageController@safari');
+Route::get('/sports/other', 'PageController@other');
+Route::get('/activities/{category}', 'PageController@activity');
 Route::get('/events', 'PageController@events');
 Route::get('/products', 'PageController@products');
 Route::get('/partners', 'PageController@partners');
@@ -35,7 +35,7 @@ Route::get('/contacts', 'PageController@contacts');
 Auth::routes();
 
 
-Route::get('/experience/{id}', [PageController::class, 'showExperience'])->name('experience.show');
+Route::get('/activity/{id}', [PageController::class, 'showActivity'])->name('activity.show');
 
 Route::get('/events/{id}', [PageController::class, 'showEvents'])->name('events.show');
 

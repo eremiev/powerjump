@@ -25,14 +25,14 @@ class PageController extends Controller
         return view('pages.team');
     }
 
-    public function experiences(){
+    public function activities(){
         $projects = Project::with('images')->OrderBy('when', 'desc')->paginate(5);
 
-        return view('pages.experiences');
+        return view('pages.activities');
     }
 
-    public function movements(){
-        return view('pages.movements');
+    public function sports(){
+        return view('pages.sports');
     }
 
     public function jumpingStilts(){
@@ -59,7 +59,7 @@ class PageController extends Controller
         return view('pages.other');
     }
 
-    public function experience($category){
+    public function activity($category){
 
         $categories = [
             'physical_activity' => 'ФИЗИЧЕСКА АКТИВНОСТ',
@@ -76,12 +76,12 @@ class PageController extends Controller
     }
 
     public function events(){
-        $events = Event::with('images')->OrderBy('when', 'desc')->paginate(5);
+        $events = Event::with('images')->OrderBy('when', 'desc')->paginate(8);
 
         return view('pages.events', compact('events'));
     }
 
-    public function showExperience($id){
+    public function showActivity($id){
 
         $project = Project::find($id);
 

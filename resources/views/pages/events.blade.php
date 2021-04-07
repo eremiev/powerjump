@@ -1,64 +1,45 @@
 @extends('layouts.app')
 
-@section('style')
-    <link rel="stylesheet" type="text/css" href="styles/blog.css">
-    <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
-@endsection
 
 @section('content')
-    <!-- Home -->
-
-    <div class="home">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{url('images/events8.jpg')}}" data-speed="0.8"></div>
-        <div class="home_container">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="home_content text-left">
-                            <div class="home_title">Събития</div>
-                        </div>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Събития</h2>
             </div>
         </div>
-    </div>
 
-    <!-- Blog -->
+        <div class="row text-center">
+              @foreach($events as $event)
 
-    <div class="blog">
-    @foreach($events as $event)
-        <!-- Blog Post -->
-
-            <div class="{{($loop->iteration  % 2 == 0) ? 'blog_post blog_post_dark' : 'blog_post blog_post_light' }}">
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="blog_post_container">
-                                <div class="blog_post_image text-center">
-                                    @foreach($event->images as $image)
-                                        <img src="{{$image->url}}" style="height: 250px;" alt=""/>
-                                        @break
-                                    @endforeach
-                                </div>
-                                <div class="blog_post_content text-center">
-                                    <div class="blog_post_title"><a href="{{ route('events.show', ['id' => $event->id]) }}">{{ $event->title }}</a></div>
-                                    {{--<div class="blog_post_author">By Coach <a href="#">James Smith</a></div>--}}
-                                    <div class="blog_post_date"><a href="{{ route('events.show', ['id' => $event->id]) }}">{{ $event->when }}</a></div>
-                                    <div class="blog_post_text">
-                                        <p>{{str_limit(strip_tags($event->description),500,'...')}}</p>
-                                    </div>
-                                    <div class="button blog_post_button"><a href="{{ route('events.show', ['id' => $event->id]) }}">Прочети повече</a></div>
-                                </div>
+                <div class="col-lg-3">
+                    <div class="bs-component">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">{{ $event->title }}</h3>
                             </div>
+                            <div class="panel-body">
+                                @foreach($event->images as $image)
+                                    <img src="{{ url('/') }}/{{$image->url}}" style="height: 250px;" alt=""/>
+                                    @break
+                                @endforeach
+                                <p>{!! str_limit(strip_tags($event->description),200,'...') !!}</p>
+
+                            </div>
+                            <div class="panel-footer">Дата на
+                                събитието: {{ \Carbon\Carbon::parse($event->when )->format('d-m-Y') }}</div>
                         </div>
                     </div>
                 </div>
+
+            @endforeach
+        </div>
+
+        @if ($events->hasPages())
+            <div class="row text-center">
+                {{ $events->links('pagination.default') }}
             </div>
-        @endforeach
-
-        {{ $events->links('pagination.default') }}
-
+        @endif
     </div>
 @endsection
 

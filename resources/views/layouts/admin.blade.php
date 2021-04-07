@@ -40,14 +40,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Brand</a>
+                    <a class="navbar-brand" href="{{ route('admin.projects.index') }}">Контрол Панел</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     @auth
                         <ul class="nav navbar-nav">
-                            <li class="{{ (request()->is('admin/projects/*')) ? 'active' : '' }}">
-                                <a href="{{ route('admin.projects.index') }}">Опит</a>
+                            <li class="{{ (request()->is('admin/projects')) || (request()->is('admin/projects/*')) ? 'active' : '' }}">
+                                <a href="{{ route('admin.projects.index') }}">Дейности</a>
                             </li>
                             <li class="{{ (request()->is('admin/events/*')) ? 'active' : '' }}">
                                 <a href="{{ route('admin.events.index') }}">Събития</a>

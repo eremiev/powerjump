@@ -1,7 +1,7 @@
 @extends('admin.home')
 
 @section('header')
-    Проекти -> Нов проект
+    Дейности -> Нов дейност
 @endsection
 @section('container')
     {!! Form::open(['route' => ['admin.projects.store'],
