@@ -2,7 +2,6 @@
 
 @section('content')
 
-    <section id="contentbody">
         <div class="container">
             <div class="row">
                 <div class=" col-sm-12 col-md-6 col-lg-6">
@@ -25,7 +24,7 @@
                                         <div class="single_sarticle_inner">
                                             <div class="stuff_article_inner"> <span class="stuff_date"><strong>{{\Carbon\Carbon::parse( $event->when)->format('d')}} {{\Carbon\Carbon::parse( $event->when)->format('M')}} <span>{{\Carbon\Carbon::parse( $event->when)->format('Y')}}</span></strong></span>
                                                 <h2><a href="{{ route('events.show', ['id' => $event->id]) }}">{{ $event->title }}</a></h2>
-                                                <p>{!! str_limit(strip_tags($event->description),215,'...') !!}</p>
+                                                <p>{!! str_limit(strip_tags($event->description),270,'...') !!}</p>
                                             </div>
                                         </div>
 
@@ -105,7 +104,6 @@
                         </div>
                     </div>
                 </div>
-    </section>
 
 @endsection
 

@@ -13,7 +13,8 @@ class Partner extends Model
      */
     protected $fillable = [
         'name',
-        'description'
+        'description',
+        'url'
     ];
 
     public function images()

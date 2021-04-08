@@ -21,6 +21,7 @@
         'culture_entertainment' => 'КУЛТУРА И ЗАБАВЛЕНИЯ',
         'social_projects' => 'СОЦИАЛНИ ПРОЕКТИ',
         'business_partnerships' => 'БИЗНЕС ПАРТНЬОРСТВА',
+        'volunteering' => 'ДОБРОВОЛЧЕСТВО'
         ], $project->category, [ 'placeholder' =>'Избери', 'class' => 'form-control']) }}
 
     </div>

@@ -15,7 +15,8 @@ class PartnerSeeder extends Seeder
         $partners = [
             [
                 'name' => 'Wild Art',
-                'description' => 'Създаден с единствената цел, да предложи най-уникалните и предизвикателни продукти, които някога сте си представяли и да ги достави до вашите домове!'
+                'description' => 'Създаден с единствената цел, да предложи най-уникалните и предизвикателни продукти, които някога сте си представяли и да ги достави до вашите домове!',
+                'url' => ''
             ]
         ];
 
@@ -25,6 +26,7 @@ class PartnerSeeder extends Seeder
             Partner::create([
                 'name' => $partner['name'],
                 'description' => $partner['description'],
+                'url' => $partner['url'],
             ]);
         }
 

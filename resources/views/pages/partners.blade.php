@@ -1,39 +1,42 @@
 @extends('layouts.app')
 
-@section('style')
-    <link rel="stylesheet" type="text/css" href="styles/classes.css">
-    <link rel="stylesheet" type="text/css" href="styles/classes_responsive.css">
+@section('title')
+    PowerJump - Партньори
 @endsection
 
 @section('content')
-    <!-- Trainers -->
-
-    <div class="trainers mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="section_title text-left">
-                        <div class="home_title" style="color: black">Партньори</div>
-                    </div>
-                </div>
-            </div>
-            <div class="row trainers_row">
-
-                <!-- Trainer -->
-                <div class="col-lg-4 trainer_col">
-                    <div class="trainer">
-                        <a href="https://wildart.bg/" target="_blank">
-                            <div class="trainer_image"><img src="{{url('images/wildart.png')}}" alt=""></div>
-                            <div class="trainer_content text-center">
-                                <div class="trainer_name">Wild Art</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Партньори</h2>
             </div>
         </div>
+
+        <div class="row text-center">
+            @foreach($partners as $partner)
+                <div class="col-sm-6 col-md-2">
+                    <a href="{{ $partner->url }}" target="_blank">
+                        <div class="thumbnail tmbnl">
+                            @foreach($partner->images as $image)
+                                <div style='background-image: url("{{ url('/') }}/{{$image->url}}");
+                                        height: 165px;
+                                        background-position: center;
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;'>
+                                    @break
+                                    @endforeach
+
+
+                                </div>
+                                <div class="caption">
+                                    <h5>{{ $partner->name }}</h5>
+                                </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+        </div>
+
     </div>
 @endsection
 

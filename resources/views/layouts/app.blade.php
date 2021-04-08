@@ -59,7 +59,7 @@
     @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
         @include('pages.nav')
     @endif
-    <div style="margin-top: 50px;">
+    <div style="margin-top: 100px;">
         @yield('content')
     </div>
     @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')

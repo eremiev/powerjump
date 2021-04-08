@@ -40,7 +40,7 @@ class PartnerController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = $request->only(['name', 'description', 'image']);
+        $inputs = $request->only(['name', 'description', 'image', 'url', 'image']);
         (new Store())->run($inputs);
 
         return redirect()->route('admin.partners.index');
@@ -68,7 +68,7 @@ class PartnerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inputs = $request->only(['name', 'description']);
+        $inputs = $request->only(['name', 'description', 'url', 'image']);
         (new Update())->run($id, $inputs);
 
         return redirect()->route('admin.partners.index');

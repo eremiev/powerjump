@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Partner;
 use App\Project;
 use Illuminate\Http\Request;
 
@@ -26,9 +27,19 @@ class PageController extends Controller
     }
 
     public function activities(){
-        $projects = Project::with('images')->OrderBy('when', 'desc')->paginate(5);
 
-        return view('pages.activities');
+        $categories = [
+            'physical_activity' => 'Физическа активност',
+            'culture_entertainment' => 'Култура и забавления',
+            'social_projects' => 'Социални проекти',
+            'business_partnerships' => 'Бизнес партньорства',
+            'volunteering' => 'Доброволчество',
+        ];
+        $projects = Project::with('images')->OrderBy('when', 'desc')->paginate(8);
+
+        $selectedCategory = null;
+
+        return view('pages.projects', compact(['projects', 'selectedCategory', 'categories']));
     }
 
     public function sports(){
@@ -62,16 +73,17 @@ class PageController extends Controller
     public function activity($category){
 
         $categories = [
-            'physical_activity' => 'ФИЗИЧЕСКА АКТИВНОСТ',
-            'culture_entertainment' => 'КУЛТУРА И ЗАБАВЛЕНИЯ',
-            'social_projects' => 'СОЦИАЛНИ ПРОЕКТИ',
-            'business_partnerships' => 'БИЗНЕС ПАРТНЬОРСТВА',
+            'physical_activity' => 'Физическа активност',
+            'culture_entertainment' => 'Култура и забавления',
+            'social_projects' => 'Социални проекти',
+            'business_partnerships' => 'Бизнес партньорства',
+            'volunteering' => 'Доброволчество',
         ];
-        $projects = Project::with('images')->where('category', $category)->OrderBy('when', 'desc')->paginate(5);
+        $projects = Project::with('images')->where('category', $category)->OrderBy('when', 'desc')->paginate(8);
 
         $selectedCategory = $categories[$category];
 
-        return view('pages.projects', compact(['projects', 'selectedCategory']));
+        return view('pages.projects', compact(['projects', 'selectedCategory', 'categories']));
 
     }
 
@@ -100,7 +112,9 @@ class PageController extends Controller
     }
 
     public function partners(){
-        return view('pages.partners');
+        $partners = Partner::with('images')->get();
+
+        return view('pages.partners', compact(['partners'] ));
     }
 
     public function contacts(){

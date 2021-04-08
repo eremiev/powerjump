@@ -21,6 +21,7 @@
                 <option value="culture_entertainment">КУЛТУРА И ЗАБАВЛЕНИЯ</option>
                 <option value="social_projects">СОЦИАЛНИ ПРОЕКТИ</option>
                 <option value="business_partnerships">БИЗНЕС ПАРТНЬОРСТВА</option>
+                <option value="volunteering">ДОБРОВОЛЧЕСТВО</option>
             </select>
         </div>
 

@@ -25,6 +25,7 @@
                         <li><a href="{{ url('activities/culture_entertainment') }}">Култура и забавления</a></li>
                         <li><a href="{{ url('activities/social_projects') }}">Социални проекти</a></li>
                         <li><a href="{{ url('activities/business_partnerships') }}">Бизнес парньорства</a></li>
+                        <li><a href="{{ url('activities/volunteering') }}">Доброволчество</a></li>
                     </ul>
                 </li>
 
@@ -40,6 +41,8 @@
                     </ul>
                 </li>
                 {{--<li class="{{ (request()->is('products/*')) ? 'active' : '' }}"><a href="{{ url('/products') }}">Пазарувай Продукти</a></li>--}}
+                <li><a href="{{ url('/partners') }}">Партньори</a></li>
+
                 <li class="dropdown">
                     <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">За нас<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">

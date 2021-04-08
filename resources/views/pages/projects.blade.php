@@ -8,60 +8,96 @@ PowerJump - {{ $selectedCategory }}
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Дейности > {{ $selectedCategory }}</h2>
+                <h2>Дейности @if (!empty($selectedCategory)) > {{ $selectedCategory }}@endif</h2>
             </div>
         </div>
-        <div class="row text-center" style="border-bottom: 1px solid #eeeeee; margin-bottom: 10px;">
-            <div class="col-sm-6 col-md-3">
+        <div class="row text-center">
+            <div class="col-sm-6 col-md-1"></div>
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/activities/physical_activity') }}">
-                    <div class="thumbnail">
-                        <img style="height: 189px;" src="{{ asset('images/physical_activity.jpg') }}"
-                             alt="physical_activity">
+                    <div class="thumbnail tmbnl">
+                        <div style='background-image: url("{{ asset('images/physical_activity.jpg') }}");
+                                height: 88px;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>ФИЗИЧЕСКА АКТИВНОСТ</h3>
-                            <p></p>
+                            <h5>ФИЗИЧЕСКА АКТИВНОСТ</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/activities/culture_entertainment') }}">
-                    <div class="thumbnail">
-                        <img style="height: 189px;" src="{{ asset('images/culture_entertainment.jpg') }}"
-                             alt="culture_entertainment">
+                    <div class="thumbnail tmbnl">
+                        <div style='background-image: url("{{ asset('images/culture_entertainment.jpg') }}");
+                                height: 88px;
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>КУЛТУРА И ЗАБАВЛЕНИЯ</h3>
+                            <h5>КУЛТУРА И ЗАБАВЛЕНИЯ</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/activities/social_projects') }}">
-                    <div class="thumbnail">
-                        <img style="height: 189px;" src="{{ asset('images/social_projects.jpg') }}"
-                             alt="social_projects">
+                    <div class="thumbnail tmbnl">
+                        <div style='background-image: url("{{ asset('images/social_projects.jpg') }}");
+                                height: 88px;
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>СОЦИАЛНИ ПРОЕКТИ</h3>
-                            <p></p>
+                            <h5>СОЦИАЛНИ ПРОЕКТИ</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/activities/business_partnerships') }}">
-                    <div class="thumbnail">
-                        <img style="height: 189px;" src="{{ asset('images/business_partnerships.jpg') }}"
-                             alt="business_partnerships">
+                    <div class="thumbnail tmbnl">
+                        <div style='background-image: url("{{ asset('images/business_partnerships.jpg') }}");
+                                height: 88px;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>БИЗНЕС ПАРТНЬОРСТВА</h3>
+                            <h5>БИЗНЕС ПАРТНЬОРСТВА</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-2" >
+                <a href="{{ url('/activities/volunteering') }}">
+                    <div class="thumbnail tmbnl" style="height: 166px;">
+                        <div style='background-image: url("{{ asset('images/volunteering.jpg') }}");
+                                height: 88px;
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
+                        <div class="caption">
+                            <h5>ДОБРОВОЛЧЕСТВО</h5>
                         </div>
                     </div>
                 </a>
             </div>
         </div>
+
+        <hr/>
 
         <div class="row text-center">
             @foreach($projects as $project)
@@ -69,20 +105,25 @@ PowerJump - {{ $selectedCategory }}
 
                 <div class="col-lg-3">
                     <div class="bs-component">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">{{ $project->title }}</h3>
+                                <span class="badge">@if(!empty($project->category)){{ $categories[$project->category] }}@endif</span>
                             </div>
                             <div class="panel-body">
                                 @foreach($project->images as $image)
-                                    <img src="{{ url('/') }}/{{$image->url}}" style="height: 250px;" alt=""/>
+
+                                    <div style='background-image: url("{{ url('/') }}/{{$image->url}}");height: 183px;
+                                            background-position: center;
+                                            background-size: 100%;
+                                            background-repeat: no-repeat;'>
+                                    </div>
                                     @break
                                 @endforeach
-                                <p>{!! str_limit(strip_tags($project->description),200,'...') !!}</p>
+                                <p style="font-size: 13px; text-align: justify;">{!! str_limit(strip_tags($project->description),190,'...') !!}</p>
 
                             </div>
-                            <div class="panel-footer">Дата на
-                                събитието: {{ \Carbon\Carbon::parse($project->when )->format('d-m-Y') }}</div>
+                            <div class="panel-footer">Дата: {{ \Carbon\Carbon::parse($project->when )->format('d-m-Y') }}</div>
                         </div>
                     </div>
                 </div>

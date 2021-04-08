@@ -13,78 +13,108 @@
         </div>
 
         <div class="row text-center">
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/sports/jumping_stilts') }}">
                     <div class="thumbnail tmbnl">
-                        <img style="height: 163px;" src="{{ asset('images/jumping_stilts.jpg') }}" alt="jumping_stilts">
+                        <div style='background-image: url("{{ asset('images/jumping_stilts.jpg') }}");
+                                height: 150px;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>Скачане с кокили #Boching</h3>
-                            <p></p>
+                            <h5>Скачане с кокили #Boching</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/sports/archery') }}">
-                    <div class="thumbnail tmbnl">
-                        <img style="height: 189px;" src="{{ asset('images/archery.jpg') }}" alt="archery">
+                    <div class="thumbnail tmbnl" style="height: 228px;">
+                        <div style='background-image: url("{{ asset('images/archery.jpg') }}");
+                                height: 150px;
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>Стрелба с лък</h3>
-                            <p></p>
+                            <h5>Стрелба с лък</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/sports/bike') }}">
-                    <div class="thumbnail tmbnl">
-                        <img style="height: 189px;" src="{{ asset('images/bike.jpg') }}" alt="bike">
+                    <div class="thumbnail tmbnl" style="height: 228px;">
+                        <div style='background-image: url("{{ asset('images/bike.jpg') }}");
+                                height: 150px;
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>Байк</h3>
-                            <p></p>
+                            <h5>Байк</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/sports/atv') }}">
-                    <div class="thumbnail tmbnl">
-                        <img style="height: 189px;" src="{{ asset('images/atv.jpg') }}" alt="atv">
+                    <div class="thumbnail tmbnl" style="height: 228px;">
+                        <div style='background-image: url("{{ asset('images/atv.jpg') }}");
+                                height: 150px;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>АТВ</h3>
-                            <p></p>
+                            <h5>АТВ</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
-                <a href="{{ url('/sports/safari') }}">
-                    <div class="thumbnail tmbnl">
-                        <img style="height: 189px;" src="{{ asset('images/safari.jpg') }}" alt="safari">
+            <div class="col-sm-6 col-md-2" >
+                <a href="{{ url('/activities/safari') }}">
+                    <div class="thumbnail tmbnl" style="height: 228px;">
+                        <div style='background-image: url("{{ asset('images/safari.jpg') }}");
+                                height: 150px;
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>Сафари Джип</h3>
-                            <p></p>
+                            <h5>Сафари Джип</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
+
+            <div class="col-sm-6 col-md-2" >
                 <a href="{{ url('/sports/other') }}">
-                    <div class="thumbnail tmbnl">
-                        <img style="height: 189px;" src="{{ asset('images/other.jpg') }}" alt="other">
+                    <div class="thumbnail tmbnl" style="height: 228px;">
+                        <div style='background-image: url("{{ asset('images/other.jpg') }}");
+                                height: 150px;
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>Други</h3>
-                            <p></p>
+                            <h5>Други</h5>
                         </div>
                     </div>
                 </a>
             </div>
         </div>
+
     </div>
 @endsection
 

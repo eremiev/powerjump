@@ -14,20 +14,25 @@
 
                 <div class="col-lg-3">
                     <div class="bs-component">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">{{ $event->title }}</h3>
                             </div>
                             <div class="panel-body">
                                 @foreach($event->images as $image)
-                                    <img src="{{ url('/') }}/{{$image->url}}" style="height: 250px;" alt=""/>
+
+                                <div style='background-image: url("{{ url('/') }}/{{$image->url}}");height: 183px;
+                                        background-position: center;
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;'>
+
+                                </div>
                                     @break
                                 @endforeach
-                                <p>{!! str_limit(strip_tags($event->description),200,'...') !!}</p>
+                                <p style="font-size: 13px; text-align: justify;">{!! str_limit(strip_tags($event->description),190,'...') !!}</p>
 
                             </div>
-                            <div class="panel-footer">Дата на
-                                събитието: {{ \Carbon\Carbon::parse($event->when )->format('d-m-Y') }}</div>
+                            <div class="panel-footer">Дата: {{ \Carbon\Carbon::parse($event->when )->format('d.m.Y') }}</div>
                         </div>
                     </div>
                 </div>

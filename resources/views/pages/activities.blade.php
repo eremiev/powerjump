@@ -10,51 +10,85 @@
         </div>
 
         <div class="row text-center">
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-1"></div>
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/activities/physical_activity') }}">
                     <div class="thumbnail tmbnl">
-                        <img style="height: 189px;" src="{{ asset('images/physical_activity.jpg') }}"
-                             alt="physical_activity">
+                        <div style='background-image: url("{{ asset('images/physical_activity.jpg') }}");
+                                height: 88px;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>ФИЗИЧЕСКА АКТИВНОСТ</h3>
-                            <p></p>
+                            <h5>ФИЗИЧЕСКА АКТИВНОСТ</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/activities/culture_entertainment') }}">
                     <div class="thumbnail tmbnl">
-                        <img style="height: 189px;" src="{{ asset('images/culture_entertainment.jpg') }}"
-                             alt="culture_entertainment">
+                        <div style='background-image: url("{{ asset('images/culture_entertainment.jpg') }}");
+                                height: 88px;
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>КУЛТУРА И ЗАБАВЛЕНИЯ</h3>
+                            <h5>КУЛТУРА И ЗАБАВЛЕНИЯ</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/activities/social_projects') }}">
                     <div class="thumbnail tmbnl">
-                        <img style="height: 189px;" src="{{ asset('images/social_projects.jpg') }}"
-                             alt="social_projects">
+                        <div style='background-image: url("{{ asset('images/social_projects.jpg') }}");
+                                height: 88px;
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>СОЦИАЛНИ ПРОЕКТИ</h3>
-                            <p></p>
+                            <h5>СОЦИАЛНИ ПРОЕКТИ</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <a href="{{ url('/activities/business_partnerships') }}">
                     <div class="thumbnail tmbnl">
-                        <img style="height: 189px;" src="{{ asset('images/business_partnerships.jpg') }}"
-                             alt="business_partnerships">
+                        <div style='background-image: url("{{ asset('images/business_partnerships.jpg') }}");
+                                height: 88px;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
                         <div class="caption">
-                            <h3>БИЗНЕС ПАРТНЬОРСТВА</h3>
+                            <h5>БИЗНЕС ПАРТНЬОРСТВА</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-2">
+                <a href="{{ url('/activities/volunteering') }}">
+                    <div class="thumbnail tmbnl" style="height: 166px;">
+                        <div style='background-image: url("{{ asset('images/volunteering.jpg') }}");
+                                height: 88px;
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;'>
+
+                        </div>
+                        <div class="caption">
+                            <h5>ДОБРОВОЛЧЕСТВО</h5>
                         </div>
                     </div>
                 </a>

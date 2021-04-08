@@ -13,8 +13,8 @@
     </div>
 
     <div class="form-group">
-        <label for="description">Описание</label>
-        <textarea id="description" name="description">{{$partner->description}}</textarea>
+        <label for="url">Уебсайт</label>
+        <input type="text" class="form-control" name="url" id=url" value="{{$partner->url}}">
     </div>
 
     <button type="submit" class="btn btn-primary">Запиши</button>

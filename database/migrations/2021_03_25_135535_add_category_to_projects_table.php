@@ -27,7 +27,6 @@ class AddCategoryToProjectsTable extends Migration
     public function down()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->string('category');
         });
     }
 }

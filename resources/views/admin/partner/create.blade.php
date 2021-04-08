@@ -14,9 +14,8 @@
     </div>
 
     <div class="form-group">
-        <label for="description">Описание</label>
-        <textarea id="description" name="description" ></textarea>
-
+        <label for="url">Уебсайт</label>
+        <input type="text" class="form-control" name="url" id=url" required>
     </div>
 
     <div class="form-group">
