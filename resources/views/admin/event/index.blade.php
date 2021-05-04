@@ -20,7 +20,7 @@
             <tr>
                 <th scope="row">{{$event->id}}</th>
                 <td>{{$event->title}}</td>
-                <td>{{ str_limit($event->description, $limit = 100, $end = '...')}}</td>
+                <td><p>{!! str_limit(strip_tags($event->description),190,'...') !!}</p></td>
                 <td>{{$event->when}}</td>
                 <td class="small">
                     <div class="row">

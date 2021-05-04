@@ -21,7 +21,7 @@
             <tr>
                 <th scope="row">{{$project->id}}</th>
                 <td>{{$project->title}}</td>
-                <td>{{ str_limit($project->description, $limit = 100, $end = '...')}}</td>
+                <td><p>{!! str_limit(strip_tags($project->description),190,'...') !!}</p></td>
                 <td>{{$project->when}}</td>
                 <td>{{$project->category}}</td>
                 <td class="small">

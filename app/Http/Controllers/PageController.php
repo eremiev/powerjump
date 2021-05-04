@@ -13,7 +13,7 @@ class PageController extends Controller
 
     public function home(){
         $projects = Project::with('images')->OrderBy('when', 'desc')->paginate(6);
-        $events = Event::with('images')->OrderBy('when', 'desc')->paginate(5);
+        $events = Event::with('images')->OrderBy('when', 'desc')->OrderBy('created_at', 'desc')->paginate(5);
 
         return view('pages.home', compact(['projects', 'events']));
     }
@@ -88,7 +88,7 @@ class PageController extends Controller
     }
 
     public function events(){
-        $events = Event::with('images')->OrderBy('when', 'desc')->paginate(8);
+        $events = Event::with('images')->OrderBy('when', 'desc')->OrderBy('created_at', 'desc')->paginate(8);
 
         return view('pages.events', compact('events'));
     }

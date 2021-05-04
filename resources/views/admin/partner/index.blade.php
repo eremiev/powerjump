@@ -10,7 +10,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Име</th>
-            <th scope="col">Описание</th>
+            <th scope="col">URL</th>
             <th scope="col">Действие</th>
         </tr>
         </thead>
@@ -19,7 +19,7 @@
             <tr>
                 <th scope="row">{{$partner->id}}</th>
                 <td>{{$partner->name}}</td>
-                <td>{{ str_limit($partner->description, $limit = 100, $end = '...')}}</td>
+                <td>{{$partner->url}}</td>
                 <td class="small">
                     <div class="row">
                         <div class="col-lg-6">

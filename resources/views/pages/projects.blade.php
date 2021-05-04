@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-PowerJump - {{ $selectedCategory }}
+PowerJump @if (!empty($selectedCategory)) - {{ $selectedCategory }} @else - Дейности@endif
 @endsection
 
 @section('content')
@@ -106,8 +106,8 @@ PowerJump - {{ $selectedCategory }}
                 <div class="col-lg-3">
                     <div class="bs-component">
                         <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">{{ $project->title }}</h3>
+                            <div class="panel-heading" style="height: 70px;">
+                                <h3 class="panel-title">{{ str_limit(strip_tags($project->title),65,'...') }}</h3>
                                 <span class="badge">@if(!empty($project->category)){{ $categories[$project->category] }}@endif</span>
                             </div>
                             <div class="panel-body">

@@ -15,7 +15,10 @@
                                     <div class="single_stuff_img">
                                         <a href="{{ route('events.show', ['id' => $event->id]) }}" style="height:297px" >
                                             @foreach($event->images as $image)
-                                                <img src="{{$image->url}}" alt="">
+                                                @php
+                                                    $image_url = $image->url;
+                                                @endphp
+                                                <img src="{{ $image_url }}" alt="">
                                                 @break
                                             @endforeach
                                         </a>
@@ -30,11 +33,11 @@
 
                                         <div class="social_area wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
                                             <ul>
-                                                <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ route('events.show', ['id' => $event->id]) }}&amp;src=sdkpreparse"><span class="fa fa-facebook"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-pinterest"></span></a></li>
+                                                <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ route('events.show', ['id' => $event->id]) }}&title={{ $event->title }}"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a target="_blank" href="https://twitter.com/intent/tweet?text=%23PowerJump%20{{ $event->title }}%20{{ route('events.show', ['id' => $event->id]) }}"><span class="fa fa-twitter"></span></a></li>
+                                                <li><a target="_blank" href="http://www.reddit.com/submit?url={{ route('events.show', ['id' => $event->id]) }}&title={{ $event->title }}"><span class="fa fa-reddit"></span></a></li>
+                                                <li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url={{ route('events.show', ['id' => $event->id]) }}&title={{ $event->title }}&source={{ url('/') }}"><span class="fa fa-linkedin"></span></a></li>
+                                                <li><a target="_blank" href="http://pinterest.com/pin/create/bookmarklet/?media={{ asset($image_url) }}&url={{ route('events.show', ['id' => $event->id]) }}&is_video=false&description={{ $event->title }}"><span class="fa fa-pinterest"></span></a></li>
                                             </ul>
                                         </div>
                                     </div>
