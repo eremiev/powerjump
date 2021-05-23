@@ -57,7 +57,7 @@
 
                         </div>
                         <div class="caption">
-                            <h5>Байк</h5>
+                            <h5>Тандем/Байк</h5>
                         </div>
                     </div>
                 </a>

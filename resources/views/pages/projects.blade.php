@@ -105,26 +105,28 @@ PowerJump @if (!empty($selectedCategory)) - {{ $selectedCategory }} @else - Де
 
                 <div class="col-lg-3">
                     <div class="bs-component">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" style="height: 70px;">
-                                <h3 class="panel-title">{{ str_limit(strip_tags($project->title),65,'...') }}</h3>
-                                <span class="badge">@if(!empty($project->category)){{ $categories[$project->category] }}@endif</span>
-                            </div>
-                            <div class="panel-body">
-                                @foreach($project->images as $image)
+                        <a href="{{ route('activity.show', ['id' => $project->id]) }}" style="text-decoration: none;" >
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="height: 70px;">
+                                    <h3 class="panel-title">{{ str_limit(strip_tags($project->title),65,'...') }}</h3>
+                                    <span class="badge">@if(!empty($project->category)){{ $categories[$project->category] }}@endif</span>
+                                </div>
+                                <div class="panel-body">
+                                    @foreach($project->images as $image)
 
-                                    <div style='background-image: url("{{ url('/') }}/{{$image->url}}");height: 183px;
-                                            background-position: center;
-                                            background-size: 100%;
-                                            background-repeat: no-repeat;'>
-                                    </div>
-                                    @break
-                                @endforeach
-                                <p style="font-size: 13px; text-align: justify;">{!! str_limit(strip_tags($project->description),190,'...') !!}</p>
+                                        <div style='background-image: url("{{ url('/') }}/{{$image->url}}");height: 183px;
+                                                background-position: center;
+                                                background-size: 100%;
+                                                background-repeat: no-repeat;'>
+                                        </div>
+                                        @break
+                                    @endforeach
+                                    <p style="font-size: 13px; text-align: justify;">{!! str_limit(strip_tags($project->description),190,'...') !!}</p>
 
+                                </div>
+                                <div class="panel-footer">Дата: {{ \Carbon\Carbon::parse($project->when )->format('d-m-Y') }}</div>
                             </div>
-                            <div class="panel-footer">Дата: {{ \Carbon\Carbon::parse($project->when )->format('d-m-Y') }}</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 

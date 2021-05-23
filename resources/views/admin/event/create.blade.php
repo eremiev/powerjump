@@ -25,8 +25,8 @@
     </div>
 
     <div class="form-group">
-        <label for="when">Проект</label>
-        {{ Form::select('project_id', $projects, null, [ 'placeholder' =>'Няма свързан проект', 'class' => 'form-control']) }}
+        <label for="when">Дейност</label>
+        {{ Form::select('project_id', $projects, null, [ 'placeholder' =>'Няма свързана дейност', 'class' => 'form-control']) }}
     </div>
 
     <div class="form-group">

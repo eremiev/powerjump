@@ -34,7 +34,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="{{ url('/sports/jumping_stilts') }}">Скачане с кокили #Boching</a></li>
                         <li><a href="{{ url('/sports/archery') }}">Стрелба с лък</a></li>
-                        <li><a href="{{ url('/sports/bike') }}">Байк</a></li>
+                        <li><a href="{{ url('/sports/bike') }}">Тандем/Байк</a></li>
                         <li><a href="{{ url('/sports/atv') }}">АТВ</a></li>
                         <li><a href="{{ url('/sports/safari') }}">Сафари Джип</a></li>
                         <li><a href="{{ url('/sports/other') }}">Други</a></li>

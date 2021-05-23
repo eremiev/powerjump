@@ -58,7 +58,8 @@
                                 <h2 class="yellow_bg">Актуално</h2>
                                 <div class="middlebar_content_inner wow fadeInUp">
                                     <ul class="middlebar_nav">
-                                        {{--<li> <a class="mbar_thubnail" href="#"><img src="images/hot_img1.jpg" alt=""></a> <a class="mbar_title" href="#">Курс Стрелба с лък</a> </li>--}}
+                                        <li> <a class="mbar_thubnail" href=""><img src="{{ asset('images/safari.jpg') }}" alt="Сафари с Джип"></a> <a class="mbar_title" href="">Сафари с Джип</a> </li>
+                                        <li> <a class="mbar_thubnail" href=""><img src="{{ asset('images/atv.jpg') }}" alt="Сафари с АТВ"></a> <a class="mbar_title" href="">Сафари с АТВ</a> </li>
                                         {{--<li> <a class="mbar_thubnail" href="#"><img src="images/hot_img2.jpg" alt=""></a> <a class="mbar_title" href="#">АТВ обиколка</a> </li>--}}
                                         {{--<li> <a class="mbar_thubnail" href="#"><img src="images/hot_img1.jpg" alt=""></a> <a class="mbar_title" href="#">Sed luctus semper odio aliquam rhoncus</a> </li>--}}
                                         {{--<li> <a class="mbar_thubnail" href="#"><img src="images/hot_img1.jpg" alt=""></a> <a class="mbar_title" href="#">Sed luctus semper odio aliquam rhoncus</a> </li>--}}
@@ -69,7 +70,7 @@
                                     <ul class="poplr_catgnva">
                                         <li><a href="{{ url('/sports/jumping_stilts') }}">Скачане с кокили #Boching</a></li>
                                         <li><a href="{{ url('/sports/archery') }}">Стрелба с лък</a></li>
-                                        <li><a href="{{ url('/sports/bike') }}">Байк</a></li>
+                                        <li><a href="{{ url('/sports/bike') }}">Тандем/Байк</a></li>
                                         <li><a href="{{ url('/sports/atv') }}">АТВ</a></li>
                                         <li><a href="{{ url('/sports/safari') }}">Сафари Джип</a></li>
                                         <li><a href="{{ url('/sports/other') }}">Други</a></li>

@@ -28,7 +28,7 @@
 
 
                                 </div>
-                                <div class="caption">
+                                <div class="caption partners-title">
                                     <h5>{{ $partner->name }}</h5>
                                 </div>
                         </div>

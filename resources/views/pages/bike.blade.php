@@ -2,7 +2,7 @@
 
 
 @section('title')
-    PowerJump - Байк
+    PowerJump - Тандем/Байк
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Движения > Байк</h2>
+                <h2>Движения > Тандем/Байк</h2>
             </div>
         </div>
 

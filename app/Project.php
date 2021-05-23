@@ -22,4 +22,10 @@ class Project extends Model
     {
         return $this->morphMany(Image::class, 'imageable');
     }
+
+    public function events(){
+
+        return $this->hasMany(Event::class);
+    }
+
 }
