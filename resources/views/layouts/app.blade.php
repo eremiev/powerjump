@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600&display=swap" rel="stylesheet">
 
     <meta name="description" content="Power Jump">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon-16x16.png') }}"/>
 
     @if (trim($__env->yieldContent('title')))
         <title>@yield('title')</title>

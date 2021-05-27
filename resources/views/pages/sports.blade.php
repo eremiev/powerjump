@@ -30,7 +30,7 @@
             </div>
 
             <div class="col-sm-6 col-md-2">
-                <a href="{{ url('/sports/archery') }}">
+                <a target="_blank" href="//www.strela-varna.com">
                     <div class="thumbnail tmbnl" style="height: 228px;">
                         <div style='background-image: url("{{ asset('images/archery.jpg') }}");
                                 height: 150px;
@@ -80,7 +80,7 @@
             </div>
 
             <div class="col-sm-6 col-md-2" >
-                <a href="{{ url('/activities/safari') }}">
+                <a href="{{ url('/sports/safari') }}">
                     <div class="thumbnail tmbnl" style="height: 228px;">
                         <div style='background-image: url("{{ asset('images/safari.jpg') }}");
                                 height: 150px;
