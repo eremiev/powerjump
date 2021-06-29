@@ -50,23 +50,15 @@
         </div>
 
 
-        <div class="media">
-            <a class="pull-left" href="#">
-                <img class="media-object" height="200px;" src="" alt="...">
-            </a>
-            <div class="media-body">
-                <h4 class="media-heading">Силвио Палазов</h4>
-                <p></p>
-            </div>
-        </div>
 
         <div class="media">
             <a class="pull-left" href="#">
-                <img class="media-object" height="200px;" src="" alt="...">
+                <img class="media-object" height="200px;" src="{{ asset('images/v.jpg')}}" alt="...">
             </a>
             <div class="media-body">
                 <h4 class="media-heading">Ванеса Вулова</h4>
-                <p></p>
+                <p>My name is Vanesa Vulova and I am 21 years old. I became part of NGO Power Jump back in 2011 when I was only 11. Since then I have been a part of numerous initiatives and events as a volunteer. I am a 3rd year Sports Studies student at the University of Stirling in Scotland.  The subjects I study include Sports Policy, Psychology of Physical Activity and Health, History of Sport, Sports Marketing and Research Methods. The Psychology of Exercise in particular touches upon physical interventions for different populations. It has given me insight in the physical activity guidelines and I am familiar with intervention design and the benefits of physical activity.</br>
+                    I am an active person who enjoys all kinds of sports. I have been a swimmer for 3 years and I am currently part of a volleyball club. I have experience with volleyball and have a beginner level license for coaching football. I am looking to gain practical experience through actively managing different projects related to physical activity. </p>
             </div>
         </div>
     </div>
