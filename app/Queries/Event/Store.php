@@ -23,6 +23,7 @@ class Store
             'title' => $inputs['title'],
             'description' => $inputs['description'],
             'when' => Carbon::parse($inputs['when']),
+            'to' => Carbon::parse($inputs['to']),
             'project_id' => $inputs['project_id']
         ]);
 

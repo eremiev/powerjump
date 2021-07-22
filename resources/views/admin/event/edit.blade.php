@@ -20,8 +20,13 @@
     </div>
 
     <div class="form-group">
-        <label for="when">Дата</label>
+        <label for="when">Дата От</label>
         <input id="when" type="date" name="when" min="2000-01-01" class="form-control" value="{{$event->when}}">
+    </div>
+
+    <div class="form-group">
+        <label for="to">Дата До</label>
+        <input id="to" type="date" name="to" min="2000-01-01" class="form-control" value="{{$event->to}}">
     </div>
 
     <div class="form-group">

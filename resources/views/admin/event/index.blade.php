@@ -11,7 +11,8 @@
             <th scope="col">#</th>
             <th scope="col">Заглавие</th>
             <th scope="col">Описание</th>
-            <th scope="col">Дата</th>
+            <th scope="col">Дата От</th>
+            <th scope="col">Дата До</th>
             <th scope="col">Действие</th>
         </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <td>{{$event->title}}</td>
                 <td><p>{!! str_limit(strip_tags($event->description),190,'...') !!}</p></td>
                 <td>{{$event->when}}</td>
+                <td>{{$event->to}}</td>
                 <td class="small">
                     <div class="row">
                         <div class="col-lg-6">

@@ -34,7 +34,7 @@
                                     <p style="font-size: 13px; text-align: justify;">{!! str_limit(strip_tags($event->description),190,'...') !!}</p>
 
                                 </div>
-                                <div class="panel-footer">Дата: {{ \Carbon\Carbon::parse($event->when )->format('d.m.Y') }}</div>
+                                <div class="panel-footer">Дата: {{ \Carbon\Carbon::parse($event->when )->format('d-m-Y') }} @if($event->to) - {{ \Carbon\Carbon::parse($event->to )->format('d-m-Y') }}@endif</div>
                             </div>
                         </a>
                     </div>

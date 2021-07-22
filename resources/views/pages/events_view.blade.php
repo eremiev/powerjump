@@ -75,7 +75,7 @@
 
                             </div>
                             <div class="panel-footer">Дата на
-                                събитието: {{ \Carbon\Carbon::parse($event->when )->format('d-m-Y') }}</div>
+                                събитието: {{ \Carbon\Carbon::parse($event->when )->format('d-m-Y') }} @if($event->to) - {{ \Carbon\Carbon::parse($event->to )->format('d-m-Y') }}@endif</div>
                         </div>
                     </div>
                 </div>

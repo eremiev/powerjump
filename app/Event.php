@@ -15,7 +15,8 @@ class Event extends Model
         'project_id',
         'title',
         'description',
-        'when'
+        'when',
+        'to'
     ];
 
     public function images()

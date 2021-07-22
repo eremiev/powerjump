@@ -44,7 +44,7 @@ class EventController extends Controller
     public function store(Request $request)
     {
 
-        $inputs = $request->only(['title', 'description', 'when', 'project_id', 'image']);
+        $inputs = $request->only(['title', 'description', 'when', 'to', 'project_id', 'image']);
         (new Store())->run($inputs);
 
         return redirect()->route('admin.events.index');
@@ -73,7 +73,7 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inputs = $request->only(['title', 'description', 'when', 'project_id', 'image']);
+        $inputs = $request->only(['title', 'description', 'when', 'to', 'project_id', 'image']);
         (new Update())->run($id, $inputs);
 
         return redirect()->route('admin.events.index');
