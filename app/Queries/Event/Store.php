@@ -23,11 +23,11 @@ class Store
             'title' => $inputs['title'],
             'description' => $inputs['description'],
             'when' => Carbon::parse($inputs['when']),
-            'to' => Carbon::parse($inputs['to']),
+            'to' => isset($inputs['to']) ? Carbon::parse($inputs['to']) : null,
             'project_id' => $inputs['project_id']
         ]);
 
-        if ($inputs['image']) {
+        if (isset($inputs['image'])) {
             try {
                 $filePath = $this->UserImageUpload($inputs['image']); //Passing $data->image as parameter to our created method
                 $event->images()->create([ 'url' => $filePath ]);
